@@ -1,70 +1,53 @@
-<nav class="navbar navbar-fixed-top navbar-inverse">
+<nav class="navbar navbar-default navbar-fixed-top homehead" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-        aria-controls="navbar">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" routerLink="/">CEDB</a>
+        </button>
+        <a class="navbar-brand" routerLink="/"><img src="../assets/cedb.png" class="logo"></a>
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li routerLinkActive="active"><a routerLink="/upcoming">Upcoming Movies</a></li>
-        <li routerLinkActive="active"><a routerLink="popular/series">Popular Series</a></li>
-      </ul>
-      <a class="navbar-brand" routerLink="upcoming">LOGIN</a>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-top: 35px;">
+        <ul class="nav navbar-nav">
+            <li routerLinkActive="active"><a routerLink="/upcoming">Upcoming Dramas</a></li>
+            <li routerLinkActive="active"><a routerLink="popular/series">Popular Dramas</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">TV Channels <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li class="divider"></li>                    
+                </ul>
+            </li>
+        </ul>
+        <div class="col-sm-3 col-md-3">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>        
     </div>
-    <!-- /.nav-collapse -->
   </div>
-  <!-- /.container -->
 </nav>
-<!-- /.navbar -->
-<!--<div class="container">
-  <div class="section">
-    <router-outlet></router-outlet>
-  </div>
-</div>-->
 
 
-<div class="container-fluid app-container">
-  <div class="row">
-    <!--<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2" id="sidebar">
-      <div class="list-group">
-        <a routerLink="/genres/{{genre.id}}/{{genre.name}}" routerLinkActive="active" class="list-group-item" *ngFor="let genre of genres">{{genre.name}}</a>
-      </div>
-    </div>-->
-    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".movies-cat">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse movies-cat">
-          <div class="panel-heading">Movies Category</div>
-          <ul class="nav nav-stacked">
-            <a routerLink="/genres/{{genre.id}}/{{genre.name}}" routerLinkActive="active" class="list-group-item" *ngFor="let genre of genres">{{genre.name}}</a>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-      </nav>
-    </div>
-    <!--/end left column-->
-    <!--/.sidebar-offcanvas-->
-    <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+<div class="container app-container homebody">
       <router-outlet></router-outlet>
-    </div>
-    <!--/.col-xs-12.col-sm-9-->
-  </div>
-  <!--/row-->
+    
   <hr>
   <footer>
-    <p>&copy; 2016 Company, Inc.</p>
+    <p>UCSC GROUP 29</p>
   </footer>
 </div>
-<!--/.container-->

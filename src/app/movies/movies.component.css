@@ -1,3 +1,7 @@
 .text-ellipsis {
     text-overflow: ellipsis;
 }
+
+.slide{
+    max-height: 400px !important;
+}
