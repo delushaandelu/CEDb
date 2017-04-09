@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-
+const config = require('../config/database');
 //bring the model to the function
 const User = require('../models/user');
 
@@ -18,6 +18,7 @@ router.post('/register', (req, res, next) => {
     telephone: req.body.telephone,
     website: req.body.website,
     youtube_channel: req.body.youtube_channel,
+    logo: req.body.logo,
     username: req.body.username,
     password: req.body.password
   });
@@ -32,12 +33,47 @@ router.post('/register', (req, res, next) => {
 
 //Authenticate
 router.post('/authenticate', (req, res, next) => {
-  res.send('Authenticate');
+  const username = req.body.username;
+  const password = req.body.password;
+
+  User.getUserByUsername(username, (err, user) => {
+    if(err) throw err;
+    if(!user){
+      return res.json({success: false, msg : 'Error | User not fountd'});
+    }
+
+    User.comparePassword(password, user.password, (err, isMatch) => {
+      if(err) throw err;
+      if(isMatch){
+        const token = jwt.sign(user, config.secret,{
+          expiresIn: 604800
+        });
+        res.json({
+          success: true,
+          token: 'JWT '+token,
+          user: {
+            id: user._id,
+            name: user.name,
+            email: user.email,
+            regno: user.regno,
+            telephone: user.telephone,
+            website: user.website,
+            youtube_channel: user.youtube_channel,
+            logo: user.logo,
+            username: user.username
+
+          }
+        });
+      }else{
+        return res.json({success: false, msg : 'Error | Wrong Password'});
+      }
+    });
+});
 });
 
 //Profile
-router.get('/profile', (req, res, next) => {
-  res.send('profile');
+router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
+  res.json({user: req.user});
 });
 
 module.exports = router;
