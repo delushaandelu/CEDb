@@ -19,5 +19,10 @@ router.get('/profile', (req, res, next) => {
   res.send('profile');
 });
 
+//Validate
+router.get('/validate', (req, res, next) => {
+  res.send('validate');
+});
+
 
 module.exports = router;
