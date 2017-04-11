@@ -1,60 +1,66 @@
 <div class="panel panel-primary" id="panel_r">
   <div class="panel-heading">Chanel Admin Register Here!</div>
   <div class="panel-body">
-    <form class="form-horizontal">
+    <form (submit)="onRegisterSubmit()"  class="form-horizontal">
       <fieldset>
         <legend>Legend</legend>
         <div class="form-group">
-          <label for="name" class="col-lg-2 control-label">Organization Name</label>
+          <label class="col-lg-2 control-label">Organization Name</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" id="name" placeholder="Name">
+            <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Name">
           </div>
         </div>
         <div class="form-group">
-          <label for="email" class="col-lg-2 control-label">Email Address</label>
+          <label  class="col-lg-2 control-label">Email Address</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" id="email" placeholder="Email">
+            <input type="text" class="form-control" [(ngModel)]="email" name="email" placeholder="Email">
           </div>
         </div>
         <div class="form-group">
-          <label for="regno" class="col-lg-2 control-label">Registration Number</label>
+          <label class="col-lg-2 control-label">Registration Number</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" id="regno" placeholder="Reg No">
+            <input type="text" class="form-control" [(ngModel)]="regno" name="regno" placeholder="Reg No">
           </div>
         </div>
         <div class="form-group">
-          <label for="telephone" class="col-lg-2 control-label">Telephone Number</label>
+          <label class="col-lg-2 control-label">Telephone Number</label>
           <div class="col-lg-10">
-            <input type="number" class="form-control" id="telephone" placeholder="Tel No">
+            <input type="number" class="form-control" [(ngModel)]="telephone" name="telephone" placeholder="Tel No">
           </div>
         </div>
         <div class="form-group">
-          <label for="website" class="col-lg-2 control-label">Web Site</label>
+          <label class="col-lg-2 control-label">Web Site</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" id="website" placeholder="Web Site URL">
+            <input type="text" class="form-control" [(ngModel)]="website" name="website" placeholder="Web Site URL">
           </div>
         </div>
         <div class="form-group">
-          <label for="youtube_channel" class="col-lg-2 control-label">Youtube Channel</label>
+          <label class="col-lg-2 control-label">Youtube Channel</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" id="youtube_channel" placeholder="Youtube Channel URL">
+            <input type="text" class="form-control" [(ngModel)]="youtube_channel" name="youtube_channel" placeholder="Youtube Channel URL">
           </div>
         </div>
         <div class="form-group">
-          <label for="username" class="col-lg-2 control-label">Username</label>
+          <label class="col-lg-2 control-label">Logo</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" id="username" placeholder="Choose an Username">
+            <input type="text" class="form-control" [(ngModel)]="logo" name="logo" placeholder="Paste your online logo link URL">
           </div>
         </div>
         <div class="form-group">
-          <label for="password" class="col-lg-2 control-label">Password</label>
+          <label class="col-lg-2 control-label">Username</label>
           <div class="col-lg-10">
-            <input type="password" class="form-control" id="password" placeholder="Use a String password(Recomanded to use A-Z, a-z, 0-9, !@#$%^)*&^)">
+            <input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="Choose an Username">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Password</label>
+          <div class="col-lg-10">
+            <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Use a String password(Recomanded to use A-Z, a-z, 0-9, !@#$%^)*&^)">
 
           </div>
         </div>
         <div class="form-group">
-          <label for="cpassword" class="col-lg-2 control-label">Conform Password</label>
+          <label class="col-lg-2 control-label">Conform Password</label>
           <div class="col-lg-10">
             <input type="password" class="form-control" id="cpassword" placeholder="Conform Password">
             <div class="checkbox">
