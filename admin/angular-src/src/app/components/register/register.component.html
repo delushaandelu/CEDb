@@ -1,68 +1,72 @@
 <app-navbar></app-navbar>
-<div class="panel panel-primary" id="panel_r">
-  <div class="panel-heading">Chanel Admin Register Here!</div>
+<div class="card" id="panel_r">
+  <div class="card-header" data-background-color="red">
+    <h4 class="title">Signup Here!</h4>
+    <p class="category">Complete your profile</p>
+  </div>
   <div class="panel-body">
     <form (submit)="onRegisterSubmit()"  class="form-horizontal">
       <fieldset>
-        <legend>Legend</legend>
+        <legend>Ceylon Entertinment Database</legend>
+
         <div class="form-group">
-          <label class="col-lg-2 control-label">Organization Name</label>
-          <div class="col-lg-10">
+          <label class="col-lg-3 control-label">Organization Name</label>
+          <div class="col-lg-8">
             <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Name">
           </div>
         </div>
         <div class="form-group">
-          <label  class="col-lg-2 control-label">Email Address</label>
-          <div class="col-lg-10">
+          <label  class="col-lg-3 control-label">Email Address</label>
+          <div class="col-lg-8">
             <input type="text" class="form-control" [(ngModel)]="email" name="email" placeholder="Email">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Registration Number</label>
-          <div class="col-lg-10">
+          <label class="col-lg-3 control-label">Registration Number</label>
+          <div class="col-lg-8">
             <input type="text" class="form-control" [(ngModel)]="regno" name="regno" placeholder="Reg No">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Telephone Number</label>
-          <div class="col-lg-10">
+          <label class="col-lg-3 control-label">Telephone Number</label>
+          <div class="col-lg-8">
             <input type="number" class="form-control" [(ngModel)]="telephone" name="telephone" placeholder="Tel No">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Web Site</label>
-          <div class="col-lg-10">
+          <label class="col-lg-3 control-label">Web Site</label>
+          <div class="col-lg-8">
             <input type="text" class="form-control" [(ngModel)]="website" name="website" placeholder="Web Site URL">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Youtube Channel</label>
-          <div class="col-lg-10">
+          <label class="col-lg-3 control-label">Youtube Channel</label>
+          <div class="col-lg-8">
             <input type="text" class="form-control" [(ngModel)]="youtube_channel" name="youtube_channel" placeholder="Youtube Channel URL">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Logo</label>
-          <div class="col-lg-10">
+          <label class="col-lg-3 control-label">Logo</label>
+          <div class="col-lg-8">
             <input type="text" class="form-control" [(ngModel)]="logo" name="logo" placeholder="Paste your online logo link URL">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Username</label>
-          <div class="col-lg-10">
+          <label class="col-lg-3 control-label">Username</label>
+          <div class="col-lg-8">
             <input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="Choose an Username">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Password</label>
-          <div class="col-lg-10">
+          <label class="col-lg-3 control-label">Password</label>
+          <div class="col-lg-8">
             <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Use a String password(Recomanded to use A-Z, a-z, 0-9, !@#$%^)*&^)">
 
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Conform Password</label>
-          <div class="col-lg-10">
+          <label class="col-lg-3 control-label">Conform Password</label>
+          <div class="col-lg-8">
             <input type="password" class="form-control" id="cpassword" placeholder="Conform Password">
             <div class="checkbox">
               <label>
@@ -75,7 +79,7 @@
         <div class="form-group">
           <div class="col-lg-10 col-lg-offset-2">
             <button type="reset" class="btn btn-default">Clear</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-danger">Submit</button>
           </div>
         </div>
       </fieldset>

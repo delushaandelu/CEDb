@@ -1,4 +1,36 @@
 <app-navbar></app-navbar>
+
+<div class="col-md-4" id="login">
+  <div class="card card-profile">
+    <div class="card-avatar">
+
+        <img class="img" src="https://pickaface.net/assets/images/slides/slide2.png" />
+
+    </div>
+
+    <div class="content">
+      <h6 class="category text-gray">Login Here!</h6>
+      <h4 class="card-title">
+        <div class="col-md-12" align="center">
+          <form (submit)="onLoginSubmit()">
+          <div class="form-group">
+            <label class="control-label">Username</label>
+            <input class="form-control" [(ngModel)]="username" name="username" type="text" >
+          </div>
+          <div class="form-group">
+            <label class="control-label">Password</label>
+            <input class="form-control" [(ngModel)]="password" name="password" type="password" >
+          </div>
+          <div id="log">
+            <button type="submit" class="btn btn-danger">Submit</button>
+          </div>
+          </form>
+        </div>
+      </h4>
+    </div>
+  </div>
+</div>
+<!--
 <div class="panel panel-info" id="login">
   <div class="panel-heading">
     <h3 class="panel-title">Login Here!</h3>
@@ -19,3 +51,4 @@
   </div>
   </form>
 </div>
+-->
