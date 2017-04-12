@@ -1,4 +1,4 @@
-  <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg" id="movie">
+  <div class="sidebar" data-color="red" data-image="../assets/img/sidebar-1.jpg" id="movie">
     <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -15,7 +15,7 @@
         <li class="active" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
           <a href="dashboard.html">
             <i class="material-icons">dashboard</i>
-            <p>Dashboard</p>
+            <p *ngIf="user">Welcome : {{user.name}}</p>
           </a>
         </li>
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
