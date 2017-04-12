@@ -1,90 +1,67 @@
+  <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg" id="movie">
+    <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
-<div id="dash" >
-  <div id="col2"  class="col-7 col-md-3">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">Add New Movie</h3>
+      Tip 2: you can also add an image using data-image tag
+     -->
+    <div class="logo">
+      <a href="http://www.creative-tim.com" class="simple-text">
+        CEDb Admin
+      </a>
     </div>
-    <div class="panel-body" align="center">
-      <button type="submit" class="btn btn-default" [routerLink] = "['/addmovie']"><i class="fa fa-modx" aria-hidden="true"></i> Ok</button>
+
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="active" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+          <a href="dashboard.html">
+            <i class="material-icons">dashboard</i>
+            <p>Dashboard</p>
+          </a>
+        </li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+          <a  [routerLink] = "['/addmovie']">
+            <i class="material-icons">person</i>
+            <p>Add Movie</p>
+          </a>
+        </li>
+        <li>
+          <a href="table.html">
+            <i class="material-icons">content_paste</i>
+            <p>Table List</p>
+          </a>
+        </li>
+        <li>
+          <a href="typography.html">
+            <i class="material-icons">library_books</i>
+            <p>Typography</p>
+          </a>
+        </li>
+        <li>
+          <a href="icons.html">
+            <i class="material-icons">bubble_chart</i>
+            <p>Icons</p>
+          </a>
+        </li>
+        <li>
+          <a href="maps.html">
+            <i class="material-icons">location_on</i>
+            <p>Maps</p>
+          </a>
+        </li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+          <a [routerLink] = "['/profile']">
+            <i class="material-icons text-gray">notifications</i>
+            <p>Profile</p>
+          </a>
+        </li>
+
+        <li class="active-pro">
+          <a (click)="onLogoutClick()" href="#" >
+            <i class="material-icons">unarchive</i>
+            <p>LogOut</p>
+          </a>
+        </li>
+
+      </ul>
     </div>
   </div>
-
-  <div class="panel panel-success">
-    <div class="panel-heading">
-      <h3 class="panel-title">Panel success</h3>
-    </div>
-    <div class="panel-body" align="center">
-      <button type="submit" class="btn btn-default"><i class="fa fa-modx" aria-hidden="true"></i> Ok</button>
-    </div>
-  </div>
-
-  <div class="panel panel-warning">
-    <div class="panel-heading">
-      <h3 class="panel-title">Panel warning</h3>
-    </div>
-    <div class="panel-body" align="center">
-      <button type="submit" class="btn btn-default"><i class="fa fa-modx" aria-hidden="true"></i> Ok</button>
-    </div>
-  </div>
-  </div>
-
-  <div id="col2" class="col-7 col-md-3">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Panel primary</h3>
-      </div>
-      <div class="panel-body" align="center">
-        <button type="submit" class="btn btn-default"><i class="fa fa-modx" aria-hidden="true"></i> Ok</button>
-      </div>
-    </div>
-
-    <div class="panel panel-success">
-      <div class="panel-heading">
-        <h3 class="panel-title">Panel success</h3>
-      </div>
-      <div class="panel-body" align="center">
-        <button type="submit" class="btn btn-default"><i class="fa fa-modx" aria-hidden="true"></i> Ok</button>
-      </div>
-    </div>
-
-    <div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 class="panel-title">Panel warning</h3>
-      </div>
-      <div class="panel-body" align="center">
-        <button type="submit" class="btn btn-default"><i class="fa fa-modx" aria-hidden="true"></i> Ok</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="col2" class="col-7 col-md-3">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Panel primary</h3>
-      </div>
-      <div class="panel-body" align="center">
-        <button type="submit" class="btn btn-default"><i class="fa fa-modx" aria-hidden="true"></i> Ok</button>
-      </div>
-    </div>
-
-    <div class="panel panel-success">
-      <div class="panel-heading">
-        <h3 class="panel-title">Panel success</h3>
-      </div>
-      <div class="panel-body" align="center">
-        <button type="submit" class="btn btn-default"><i class="fa fa-modx" aria-hidden="true"></i> Ok</button>
-      </div>
-    </div>
-
-    <div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 class="panel-title">Panel warning</h3>
-      </div>
-      <div class="panel-body" align="center">
-        <button type="submit" class="btn btn-default"><i class="fa fa-modx" aria-hidden="true"></i> Ok</button>
-      </div>
-    </div>
-  </div>
-
-</div>
