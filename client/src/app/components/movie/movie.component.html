@@ -1,0 +1,83 @@
+<div class="row" *ngIf="movie" style="background-color: black; margin: 0">
+  <div class="col-md-4">
+    <img src="assets/img/{{movie.imagePath}}" alt="" class="thumbnail Mimage" style="margin-top: 10px"> 
+  </div>
+
+  <div class="col-md-6">
+    <h2>{{movie.movieTitle}}
+      <small class="label label-warning">
+        {{movie.rating}}
+        <i class="glyphicon glyphicon-star"></i>
+      </small>
+    </h2>
+    <p>{{movie.startedYear}}</p>
+    <p>
+      <a *ngFor="let genre of movie.catagory" class="label label-info m-r-md">
+        {{genre}}
+      </a>
+    </p>
+    <h3>Overview</h3>
+    <p style="height: 150px">
+      {{movie.overview}}
+    </p>
+    <button class="btn btn-info">Rate</button>
+    <button class="btn btn-info">Add to Watch List</button>
+    <button class="btn btn-info">Add Review</button>
+  </div>
+
+  <div class="col-md-2" style="float: right">
+    <button class="btn btn-info">Visit Channel</button>
+    <button (click)="getepisode()" class="btn btn-info">Episodes</button>
+    <button (click)="getactor()" class="btn btn-info">Cast & Crew</button>
+    <button (click)="getreview()" class="btn btn-info">Reviews</button>
+  </div>
+  
+</div>
+
+<div class="row" *ngIf="review==true">
+  <div class="col-md-6">
+    <!--Trailer-->
+    <div>
+        <h2>Trailer</h2>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" [src]="url"></iframe>
+        </div>
+    </div>
+    <!--Trailer-->
+
+    
+  </div>
+
+
+  <div class="col-md-6">
+    <div *ngIf="movie.userComments && movie.userComments.length > 0">
+      <h2>Reviews</h2>
+      <div *ngFor="let review of movie.userComments">
+        <blockquote>
+          <p class="text-justify">{{review.text}}</p>
+          <footer><cite title="{{review.author}}"><a href="{{review.url}}" target="_blank">{{review.postedBy}}</a><br>{{review.date}}</cite></footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="epi==true">
+<app-episode-list [episode]="movie.episode"></app-episode-list>
+</div>
+<div *ngIf="actor==true">
+<app-actor-list [actors]="movie.mainActors"></app-actor-list>
+</div>
+
+
+<!--Similar Movies
+<div class="row is-flex" *ngIf="similarMovies && similarMovies.length > 0">
+  <div class="col-md-12">
+    <h2>Similar Movies</h2>
+  </div>
+  <div class="col-md-2" *ngFor="let movie of similarMovies">
+    <movie-card [movie]="movie"></movie-card>
+  </div>
+</div>
+Similar Movies-->
+
