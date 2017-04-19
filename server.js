@@ -23,10 +23,12 @@ mongoose.connection.on('error',(err) => {
 const app = express();
 
 const user = require('./routes/users');
+const cuser = require('./routes/cusers');
 const movie = require('./routes/movie');
 
 //port number
-const port=3000;
+const port=4000;
+
 
 //Cors Middleware
 app.use(cors());
@@ -45,6 +47,7 @@ require('./config/passport')(passport);
 
 //routes
 app.use('/users',user);
+app.use('/cusers',cuser);
 app.use('/movie',movie);
 
 //Index Route

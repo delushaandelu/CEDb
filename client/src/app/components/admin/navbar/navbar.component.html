@@ -1,0 +1,26 @@
+
+<div class="navbar navbar-default navbar-fixed-top homehead" id="nave">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/"><img src="../assets/cedb.png" class="logo"></a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink] = "['admin']">Home</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <!--<li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink] = "['/dashboard']">Dashboard</a></li>-->
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink] = "['/admin/login']">SignIn</a></li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink] = "['/admin/register']">SignUp</a></li>
+       <!-- <li><a (click)="onLogoutClick()"  href="#">Logout</a></li>-->
+      </ul>
+
+    </div>
+  </div>
+</div>

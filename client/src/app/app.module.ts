@@ -22,6 +22,18 @@ import {AuthGuard} from './guards/auth.guard';
 import { EpisodeListComponent } from './components/episode-list/episode-list.component';
 import { ActorListComponent } from './components/actor-list/actor-list.component';
 
+<<<<<<< HEAD
+import { NavbarComponent } from './components/admin/navbar/navbar.component';
+import { cLoginComponent } from './components/admin/login/login.component';
+import { cRegisterComponent } from './components/admin/register/register.component';
+import { HomeComponent } from './components/admin/home/home.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { ProfileComponent } from './components/admin/profile/profile.component';
+import { AddmovieComponent } from './components/admin/addmovie/addmovie.component';
+
+
+=======
+>>>>>>> origin/master
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +50,17 @@ import { ActorListComponent } from './components/actor-list/actor-list.component
     EpisodeListComponent,
     ActorListComponent,
 
+<<<<<<< HEAD
+    NavbarComponent,
+    cLoginComponent,
+    cRegisterComponent,
+    HomeComponent,
+    DashboardComponent,
+    ProfileComponent,
+    AddmovieComponent
+
+=======
+>>>>>>> origin/master
   ],
   imports: [
     BrowserModule,
