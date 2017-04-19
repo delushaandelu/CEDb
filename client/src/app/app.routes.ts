@@ -8,8 +8,6 @@ import { SerieComponent } from './components/serie/serie.component';
 import { ActorComponent } from './components/actor/actor.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-<<<<<<< HEAD
-import { AppComponent } from './app.component';
 
 import { cLoginComponent } from './components/admin/login/login.component';
 import { cRegisterComponent } from './components/admin/register/register.component';
@@ -17,8 +15,6 @@ import { DashboardComponent } from './components/admin/dashboard/dashboard.compo
 import { ProfileComponent } from './components/admin/profile/profile.component';
 import { AddmovieComponent } from './components/admin/addmovie/addmovie.component';
 import { HomeComponent } from './components/admin/home/home.component'
-=======
->>>>>>> origin/master
 
 
 export const appRoutes: Routes = [
@@ -30,7 +26,6 @@ export const appRoutes: Routes = [
     {path: 'upcoming', component: UpcomingComponent},
     {path: 'popular/series', component: PopularSeriesComponent},
     {path: 'login', component: LoginComponent},
-<<<<<<< HEAD
     {path: 'login/register', component: RegisterComponent},
 
     {path:'admin', component: HomeComponent},
@@ -39,7 +34,5 @@ export const appRoutes: Routes = [
     {path:'admin/dashboard', component: DashboardComponent},
     {path:'admin/profile', component: ProfileComponent},
     {path:'admin/addmovie', component: AddmovieComponent}
-=======
-    {path: 'login/register', component: RegisterComponent}
->>>>>>> origin/master
+    
 ];
