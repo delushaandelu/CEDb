@@ -13,11 +13,7 @@ export class MoviesService {
   }
 
   getAll(){
-<<<<<<< HEAD
     return this.http.get('http://localhost:4000/movie/getall')
-=======
-    return this.http.get('http://localhost:3000/movie/getall')
->>>>>>> origin/master
       .map(res => res.json());
   }
 
@@ -65,11 +61,7 @@ export class MoviesService {
 
 
   getMovie(id: string){
-<<<<<<< HEAD
     return this.http.get('http://localhost:4000/movie/getmovie/'+id)
-=======
-    return this.http.get('http://localhost:3000/movie/getmovie/'+id)
->>>>>>> origin/master
       .map(res => res.json());
   }
 

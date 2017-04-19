@@ -18,11 +18,7 @@ export class MovieComponent implements OnInit {
   epi: boolean;
   actor: boolean;
   review: boolean;
-<<<<<<< HEAD
-
   comment: String;
-=======
->>>>>>> origin/master
   constructor(
     private _moviesServices: MoviesService,
     private router: ActivatedRoute,
@@ -83,13 +79,9 @@ export class MovieComponent implements OnInit {
     this.actor = false;
   }
 
-<<<<<<< HEAD
   addReview(){
     console.log(this.comment);
     
 
   }
-
-=======
->>>>>>> origin/master
 }
