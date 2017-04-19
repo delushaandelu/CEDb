@@ -29,6 +29,7 @@ const movie = require('./routes/movie');
 //port number
 const port=4000;
 
+
 //Cors Middleware
 app.use(cors());
 
