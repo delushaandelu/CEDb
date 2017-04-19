@@ -1,0 +1,36 @@
+<!--<div class="thumbnail">
+  <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" *ngIf="movie.poster_path">
+  <img src="assets/img/abstract-image.jpg" *ngIf="!movie.poster_path">
+  <div class="caption">
+    <h4 class="text-ellipsis">
+      <a routerLink="/movie/{{movie.id}}" title="{{movie.title}}">{{movie.title}}</a>
+    </h4>
+    <p><strong>Release Date: </strong>{{movie.release_date}}</p>
+    <p>
+      <a routerLink="/movie/{{movie.id}}">View details &raquo;</a>
+      <small class="label label-success pull-right" *ngIf="movie.vote_average">
+        {{movie.vote_average}}
+        <i class="glyphicon glyphicon-star"></i>
+      </small>
+    </p>
+  </div>
+</div>-->
+
+
+<div class="thumbnail" style="background-color: black">
+  <img src="assets/img/{{movie.imagePath}}" *ngIf="movie.imagePath">
+  <img src="assets/img/default.png" *ngIf="!movie.imagePath">
+  <div class="caption">
+    <h4 class="text-ellipsis">
+      <a routerLink="/movie/{{movie.id}}" title="{{movie.movieTitle}}">{{movie.movieTitle}}</a>
+    </h4>
+    <p><strong>{{movie.tvChannel}}</strong></p>
+    <p>
+      <a routerLink="/movie/{{movie._id}}">View details &raquo;</a>
+      <small class="label label-success pull-right" *ngIf="movie.rating">
+        {{movie.rating}}
+        <i class="glyphicon glyphicon-star"></i>
+      </small>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<h3>Episodes</h3>
+<p>Season 1</p>
+
+<div class="row is-flex">
+  <div class="col-md-2" *ngFor="let epi of episode">
+      <img src="assets/img/{{epi.episodeImagePath}}"style="width: 130px; height: 150px; ">
+      <h4>{{epi.episodeTitle}}</h4>
+      {{epi.episodeOverview}}
+      <p>WatchNow</p>
+  </div>
+</div>

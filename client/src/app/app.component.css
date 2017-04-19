@@ -1,0 +1,19 @@
+.logbtn{
+    float: right;
+}
+
+.homehead{
+    min-height: 100px;
+
+}
+
+.homebody{
+    padding-top: 50px;
+    margin-top: 60px;
+    background-color:#bfbfbf ;
+}
+
+.logo{
+    height: 90px;
+    width: 150px;
+}
