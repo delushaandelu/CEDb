@@ -1,11 +1,15 @@
-<h3>Episodes</h3>
-<p>Season 1</p>
 
 <div class="row is-flex">
-  <div class="col-md-2" *ngFor="let epi of episode">
+  <div class="col-md-2" *ngFor="let epi of filterepisode">
       <img src="assets/img/{{epi.episodeImagePath}}"style="width: 130px; height: 150px; ">
       <h4>{{epi.episodeTitle}}</h4>
       {{epi.episodeOverview}}
-      <p>WatchNow</p>
+      <button (click)= "ClickButton(epi.episodeURL)">Watch Now</button>
   </div>
 </div>
+
+<popup>
+  <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" [src]="url"></iframe>
+  </div>
+</popup>

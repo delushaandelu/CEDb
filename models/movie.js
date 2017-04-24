@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const config = require('../config/database');
 const User = require('../models/user');
+const actor = require('../models/actor');
 
 //User Schema
 const MovieSchema = mongoose.Schema({
@@ -24,6 +25,9 @@ const MovieSchema = mongoose.Schema({
     imagePath:{
         type: String
     },
+    coverPath:{
+        type: String
+    },
     rating:{
         type: String,
         required: true
@@ -41,19 +45,18 @@ const MovieSchema = mongoose.Schema({
         text: String,
         date: String,
         postedBy: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
+            type: mongoose.Schema.Types.String,
+            ref: 'username'
         }
     }],
-    Director:{
-        type: String
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Crew'
-    },
-    mainActors:[{
-        type: String
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Crew'
+    crew:[{
+        id:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'actor'
+        },
+        role:{
+            type: String
+        }
     }],
     numberOfSeasons:{
         type : String
@@ -65,7 +68,9 @@ const MovieSchema = mongoose.Schema({
         episodeImagePath: String,
         episodeTitle: String,
         episodeOverview: String,
-        episodeURL: String 
+        episodeURL: String,
+        episodeDate: String,
+        season: String
     }]
 });
 
@@ -88,4 +93,8 @@ module.exports.addMovie  = function(newMovie, callback){
 
 module.exports.getAll  = function(callback){
     Movie.find({},callback);
+}
+
+module.exports.addcomment = function(comment,dramaId,callback){
+    Movie.findOneAndUpdate({_id: dramaId},{$push: {userComments: comment}},callback);
 }

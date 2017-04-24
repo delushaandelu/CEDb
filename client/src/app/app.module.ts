@@ -29,6 +29,9 @@ import { HomeComponent } from './components/admin/home/home.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { ProfileComponent } from './components/admin/profile/profile.component';
 import { AddmovieComponent } from './components/admin/addmovie/addmovie.component';
+import { ChannelComponent } from './components/channel/channel.component';
+
+import {PopupModule} from 'ng2-opd-popup';
 
 
 @NgModule({
@@ -53,7 +56,8 @@ import { AddmovieComponent } from './components/admin/addmovie/addmovie.componen
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    AddmovieComponent
+    AddmovieComponent,
+    ChannelComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,8 @@ import { AddmovieComponent } from './components/admin/addmovie/addmovie.componen
     HttpModule,
     JsonpModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule
+    FlashMessagesModule,
+    PopupModule.forRoot()
     
   ],
   providers: [ValidateService, AuthService, AuthGuard],

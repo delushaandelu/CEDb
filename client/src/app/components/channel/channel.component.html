@@ -1,0 +1,67 @@
+<div class="row" *ngIf="channel" style="background-color: black; margin: 0">
+  <div class="col-md-4">
+    <img src="assets/img/{{channel.logoUrl}}" alt="" class="log" style="margin-top: 10px"> 
+  </div>
+
+  <div class="col-md-6">
+    <h2>{{channel.name}}
+      <small class="label label-warning">
+        rate
+        <i class="glyphicon glyphicon-star"></i>
+      </small>
+    </h2>
+    <p>{{channel.Description}}</p>
+    <h3>Overview</h3>
+    <button class="btn btn-info">Rate</button>
+  </div>
+  
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <h3 class="orange-text"> Most Popular</h3>
+    <div class="row is-flex">
+      <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of popularList; let i = index;">
+        <movie-card [movie]="movie"></movie-card>
+      </div>
+    </div>
+
+    <h3 class="orange-text">All Dramas</h3>
+    <div class="row is-flex">
+      <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of popularList; let i = index;">
+        <movie-card [movie]="movie"></movie-card>
+      </div>
+    </div>
+  </div>
+    
+  <div class="col-md-4">
+    <h3>Shedule</h3>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+

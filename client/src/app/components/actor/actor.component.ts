@@ -9,21 +9,16 @@ import {MoviesService} from '../../services/movies.service';
   styleUrls: ['./actor.component.css']
 })
 export class ActorComponent implements OnInit {
-  person: Object;
-  movies: Array<Object>;
+  actor: Array<Object>;
   constructor(private _moviesSerice: MoviesService, private router: ActivatedRoute,) {
 
   }
 
   ngOnInit() {
-    this.router.params.subscribe((params) => {
-      const id = params['id'];
-      this._moviesSerice.getPersonDetail(id).subscribe(person => {
-        this.person = person;
-      });
-      this._moviesSerice.getPersonCast(id).subscribe(res => {
-        this.movies = res.cast;
-      });
+    this.router.params.subscribe((params)=>{
+      this._moviesSerice.getActor(params["id"]).subscribe(res =>{
+        this.actor = res;
+      })
     })
   }
 

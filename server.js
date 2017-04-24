@@ -25,9 +25,11 @@ const app = express();
 const user = require('./routes/users');
 const cuser = require('./routes/cusers');
 const movie = require('./routes/movie');
+const channel = require('./routes/channel');
+const actor = require('./routes/actor');
 
 //port number
-const port=4000;
+const port=3000;
 
 
 //Cors Middleware
@@ -49,6 +51,8 @@ require('./config/passport')(passport);
 app.use('/users',user);
 app.use('/cusers',cuser);
 app.use('/movie',movie);
+app.use('/channel',channel)
+app.use('/actor',actor)
 
 //Index Route
 app.get('/',(req, res)=>{

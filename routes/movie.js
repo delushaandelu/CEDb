@@ -11,13 +11,13 @@ router.post('/addmovie',(req,res,next) => {
         showTime: req.body.showTime,
         status: req.body.status,
         imagePath: req.body.imagePath,
+        coverPath: req.body.coverPath,
         rating: req.body.rating,
         catagory: req.body.catagory,
         overview: req.body.overview,
         trailerURL: req.body.trailerURL,
         userComments: req.body.userComments,
-        Director: req.body.Director,
-        mainActors: req.body.mainActors,
+        crew: req.body.crew,
         numberOfSeasons: req.body.numberOfSeasons,
         numberOfEpisodes: req.body.numberOfEpisodes,
         episode: req.body.episode,
@@ -28,6 +28,17 @@ router.post('/addmovie',(req,res,next) => {
             res.json({success: false, msg: 'Faild to add movie'+err});      
         }else{
             res.json({success: true, msg: 'movie added'}); 
+        }
+    });
+});
+
+router.post('/addcomment',(req,res, next) => {
+    console.log(req);
+    Movie.addcomment(req.body.comment,req.body.dramaID,(err) => {
+        if(err){
+            res.json({success: false, msg: 'Faild to add comment'+err});      
+        }else{
+            res.json({success: true, msg: 'comment added'}); 
         }
     });
 });

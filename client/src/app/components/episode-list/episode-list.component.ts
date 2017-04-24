@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Input } from '@angular/core';
+import {Popup} from 'ng2-opd-popup';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-episode-list',
@@ -8,12 +10,54 @@ import { Input } from '@angular/core';
 })
 export class EpisodeListComponent implements OnInit {
 
-  @Input()
-  episode: Object;
+  @Input('episode')
+  episode: Array<Object>;
 
-  constructor() { }
+  @Input('snumber')
+  snumber: string;
+  url: SafeResourceUrl;
+
+
+  filterepisode: Array<Object> = [];
+
+  constructor(private popup:Popup, private sanitizer:DomSanitizer) {
+
+   }
 
   ngOnInit() {
+    
+    this.popup.options = {
+      header: "Your custom header",
+      color: "#5cb85c", // red, blue.... 
+      widthProsentage: 50, // The with of the popou measured by browser width 
+      animationDuration: 1, // in seconds, 0 = no animation 
+      showButtons: true, // You can hide this in case you want to use custom buttons 
+      confirmBtnContent: "OK", // The text on your confirm button 
+      cancleBtnContent: "Cancel", // the text on your cancel button 
+      confirmBtnClass: "btn btn-default", // your class for styling the confirm button 
+      cancleBtnClass: "btn btn-default", // you class for styling the cancel button 
+      animation: "fadeInDown" // 'fadeInLeft', 'fadeInRight', 'fadeInUp', 'bounceIn','bounceInDown' 
+    };
+
+
+  }
+
+  ngOnChanges(...args: any[]) {
+
+    this.filterepisode = []
+    this.episode.forEach(element => {
+      if(element["season"]==this.snumber){
+        this.filterepisode.push(element)
+      }
+    });
+    
+    console.log(this.filterepisode);
+  }
+
+  ClickButton(epiUrl){
+    this.popup.show(this.popup.options);
+    this.url = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + epiUrl);
+
   }
 
 }
