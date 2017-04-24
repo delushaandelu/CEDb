@@ -14,7 +14,8 @@ import { cRegisterComponent } from './components/admin/register/register.compone
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { ProfileComponent } from './components/admin/profile/profile.component';
 import { AddmovieComponent } from './components/admin/addmovie/addmovie.component';
-import { HomeComponent } from './components/admin/home/home.component'
+import { HomeComponent } from './components/admin/home/home.component';
+import {ChannelComponent} from './components/channel/channel.component';
 
 
 export const appRoutes: Routes = [
@@ -27,6 +28,8 @@ export const appRoutes: Routes = [
     {path: 'popular/series', component: PopularSeriesComponent},
     {path: 'login', component: LoginComponent},
     {path: 'login/register', component: RegisterComponent},
+
+    {path: 'channel/:name', component: ChannelComponent},
 
     {path:'admin', component: HomeComponent},
     {path:'admin/register', component: cRegisterComponent},

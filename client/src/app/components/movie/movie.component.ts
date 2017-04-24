@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import {MoviesService} from '../../services/movies.service';
-import {Router} from '@angular/router'
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
+import {Observable} from 'rxjs/Rx';
+import { EpisodeListComponent } from '../episode-list/episode-list.component';
+
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-movie',
@@ -18,47 +23,51 @@ export class MovieComponent implements OnInit {
   epi: boolean;
   actor: boolean;
   review: boolean;
-  comment: String;
+  comment: string;
+  id: string;
+  com: Array<Object>;
+  season: string = "1";
+  channel: Object;
+  s: Array<Number> = [];
   constructor(
     private _moviesServices: MoviesService,
+    private authService: AuthService,
     private router: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    private rrouter:Router
+    private rrouter:Router,
+    private flashMessageService: FlashMessagesService
     ) {
 
   }
 
   ngOnInit() {
+
+
+
     this.router.params.subscribe((params) => {
-      const id = params['id'];
-      this._moviesServices.getMovie(id).subscribe(movie => {
+      this.id = params['id'];
+      this._moviesServices.getMovie(this.id).subscribe(movie => {
         this.movie = movie;
+        this.com = movie.userComments;
         this.url = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + movie.trailerURL);
         this.epi = false;
         this.actor = false;
         this.review = true;
         console.log(movie);
+
+          this._moviesServices.getChannel(movie.tvChannel).subscribe(res => {
+            this.channel = res;
+            //console.log(this.channel)
+          })
+
+          for(var x=1; x<=movie.numberOfSeasons; x++){
+          this.s.push(x);
+      }
       });
-      
-      // this._moviesServices.getMovieReviews(id).subscribe(res => {
-      //   this.reviews = res.results;
-      // });
-      // this._moviesServices.getMovieCredits(id).subscribe(res => {
-      //   res.cast = res.cast.filter((item) => {return item.profile_path});
-      //   this.cast = res.cast.slice(0,4);
-      // });
-      // this._moviesServices.getMovieVideos(id).subscribe(res => {
-      //   if(res.results && res.results.length) {
-      //     this.video = res.results[0];        
-      //     this.video['url'] = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video['key']);
-      //   }
-      // });
-      // this._moviesServices.getSimilarMovies(id).subscribe(res => {
-      //   console.log(res.results);
-        
-      //   this.similarMovies = res.results.slice(0, 12);
-      // });
     })
+
+    
+
   }
 
   getepisode(){
@@ -80,8 +89,31 @@ export class MovieComponent implements OnInit {
   }
 
   addReview(){
-    console.log(this.comment);
-    
+    if(this.authService.loggedIn()){
+      this.authService.getProfile().subscribe(res => {
+        var date = new Date();
+        var comment = {
+          dramaID: this.id,
+          comment: { text:this.comment,date: date, postedBy: res.user.username}
+        }
 
+        this._moviesServices.addcomment(comment).subscribe(res => {
+          this.comment = '';
+          this.com.push(comment.comment);
+          this.flashMessageService.show("Review Added Successfully",{cssClass:'alert-success', timeout: 3000});
+          //console.log(res)
+        })
+        
+    })
+    }else{
+      this.rrouter.navigate(['/login']);
+    }
+    
   }
+
+  change(number){
+    this.season = number;
+  }
+
+  
 }

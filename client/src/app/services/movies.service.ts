@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import {Jsonp, URLSearchParams} from '@angular/http';
-import {Http, Headers} from '@angular/http';
-import 'rxjs/Rx';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
+import {Observable} from 'rxjs/Rx';
+
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class MoviesService {
@@ -13,8 +16,18 @@ export class MoviesService {
   }
 
   getAll(){
-    return this.http.get('http://localhost:4000/movie/getall')
+    return this.http.get('http://localhost:3000/movie/getall')
       .map(res => res.json());
+  }
+
+  addcomment(comment){
+      let bodyString = JSON.stringify(comment);
+      let headers = new Headers({ 'Content-Type': 'application/json' }); 
+      let options = new RequestOptions({ headers: headers });
+
+      return this.http.post('http://localhost:3000/movie/addcomment/', bodyString, options) 
+        .map((res:Response) => res.json())
+        .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   // getPopular() {
@@ -61,7 +74,19 @@ export class MoviesService {
 
 
   getMovie(id: string){
-    return this.http.get('http://localhost:4000/movie/getmovie/'+id)
+    return this.http.get('http://localhost:3000/movie/getmovie/'+id)
+      .map(res => res.json());
+  }
+
+  getChannel(name: string){
+    return this.http.get('http://localhost:3000/channel/findchannel/'+name)
+      .map(res => res.json());
+
+      
+  }
+
+  getActor(id: string){
+    return this.http.get('http://localhost:3000/actor/getactor/'+id)
       .map(res => res.json());
   }
 
