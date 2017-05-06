@@ -1,0 +1,57 @@
+<app-dashboard></app-dashboard>
+<div *ngIf="user" id="user">
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header" data-background-color="red">
+              <h4 class="title">Profile Information</h4>
+              <p class="category">Company Profile Information</p>
+            </div>
+            <div class="card-content table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                <th>Static</th>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Username</td>
+                  <td>: {{user.username}}</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>: {{user.email}}</td>
+                </tr>
+                <tr>
+                  <td>Registation No</td>
+                  <td>: {{user.regno}}</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>: {{user.email}}</td>
+                </tr>
+                <tr>
+                  <td>Telephone Number</td>
+                  <td>: {{user.telephone}}</td>
+                </tr>
+                <tr>
+                  <td>Website</td>
+                  <td>: {{user.website}}</td>
+                </tr>
+                <tr>
+                  <td>Youtube Channel</td>
+                  <td>: {{user.youtube_channel}}</td>
+                </tr>
+                <tr>
+                  <td>Logo Link</td>
+                  <td>: {{user.logo}}</td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
