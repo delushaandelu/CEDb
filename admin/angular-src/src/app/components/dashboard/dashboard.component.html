@@ -27,19 +27,19 @@
         <li>
           <a href="table.html">
             <i class="material-icons">content_paste</i>
-            <p>Table List</p>
+            <p>View Movies</p>
           </a>
         </li>
-        <li>
-          <a href="typography.html">
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+          <a [routerLink] = "['/episode']">
             <i class="material-icons">library_books</i>
-            <p>Typography</p>
+            <p>Add Episode</p>
           </a>
         </li>
-        <li>
-          <a href="icons.html">
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+          <a [routerLink] = "['/comments']">
             <i class="material-icons">bubble_chart</i>
-            <p>Icons</p>
+            <p>Comments</p>
           </a>
         </li>
         <li>

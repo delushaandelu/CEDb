@@ -17,6 +17,8 @@ import {AuthService} from './services/auth.service';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AuthGuard} from './guards/auth.guard';
 import { AddmovieComponent } from './components/addmovie/addmovie.component';
+import { EpisodeComponent } from './components/episode/episode.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -24,7 +26,9 @@ const appRoutes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'dashboard', component: DashboardComponent},
   {path:'profile', component: ProfileComponent},
-  {path:'addmovie', component: AddmovieComponent}
+  {path:'addmovie', component: AddmovieComponent},
+  {path: 'episode', component: EpisodeComponent},
+  {path: 'comments', component: CommentsComponent}
 ]
 
 @NgModule({
@@ -37,6 +41,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     ProfileComponent,
     AddmovieComponent,
+    EpisodeComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,
