@@ -1,17 +1,17 @@
 <div class="row" *ngIf = "actor" style="background-color: black; margin: 0">
-  <div class="col-md-4">
-    <img src="assets/img/{{actor.imagePath}}" alt="" class="log" style="margin-top: 10px;width: 250px; height:300px "> 
+  <div class="col-md-3">
+    <img src="assets/img/{{actor.imagePath}}" alt="" class="thumbnail Mimage" style="margin-top: 10px;width: 250px; height:280px "> 
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-9">
     <h2>{{actor.name}}</h2>
-    <div *ngFor="let r of actor.roles">
-      {{r}}
+    <div *ngFor="let r of actor.roles" style="display: inline">
+      {{r}} |
     </div>
     <h3>Biography</h3>
     <div *ngFor="let r of actor.biography">
       Birthday: {{r.dob}}
-      Descrtiption: {{r.description}}
+      <p>{{r.description}}<p>
     </div>
   </div>
   
@@ -61,6 +61,6 @@
 
 <div class="row">
   <div class="col-md-12">
-      <h3>PhotoGallery</h3>
+      <h3>Photo Gallery</h3>
   </div>
 </div>

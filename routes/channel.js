@@ -9,9 +9,7 @@ router.post('/addChannel',(req,res,next) => {
         logoUrl: req.body.logoUrl,
         coverUrl: req.body.coverUrl,
         rating: req.body.rating,
-        Description: req.body.Description,
-        Shedule: req.body.Shedule,
-        dramas: req.body.dramas
+        Description: req.body.Description
     });
 
     Channel.addChannel(newChannel,(err) => {
@@ -32,5 +30,12 @@ router.get('/findchannel/:name',(req,res,next) => {
         }
     })
 })
+
+//get All getchannel name
+router.get('/getnames', (req, res, next) => {
+    Channel.getname((err,names) =>{
+        res.json(names);
+    });
+});
 
 module.exports = router;

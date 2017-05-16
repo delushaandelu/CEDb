@@ -1,6 +1,6 @@
 <div class="row" *ngIf="channel" style="background-color: black; margin: 0">
-  <div class="col-md-4">
-    <img src="assets/img/{{channel.logoUrl}}" alt="" class="log" style="margin-top: 10px"> 
+  <div class="col-md-3">
+    <img src="assets/img/{{channel.logoUrl}}" alt="" class="thumbnail Mimage" style="margin-top: 10px"> 
   </div>
 
   <div class="col-md-6">
@@ -12,56 +12,45 @@
     </h2>
     <p>{{channel.Description}}</p>
     <h3>Overview</h3>
+    <div style="height: 60px;">
+      
+    </div>
+    <img src="assets/img/star1.png" style="height: 40px; width: 180px;"> 
     <button class="btn btn-info">Rate</button>
+  </div>
+  <div class="col-md-3">
+    <h3>Drama Shedule</h3>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Drama</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of popularList">
+        <td>{{a.movieTitle}}</td>
+        <td>{{a.showTime}}</td>
+      </tr>
+    </tbody>
+  </table>
   </div>
   
 </div>
 
 <div class="row">
-  <div class="col-md-8">
-    <h3 class="orange-text"> Most Popular</h3>
+  <div class="col-md-12">
+    <h3 class="orange-text"> All Dramas</h3>
     <div class="row is-flex">
       <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of popularList; let i = index;">
         <movie-card [movie]="movie"></movie-card>
       </div>
     </div>
-
-    <h3 class="orange-text">All Dramas</h3>
-    <div class="row is-flex">
-      <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of popularList; let i = index;">
-        <movie-card [movie]="movie"></movie-card>
-      </div>
-    </div>
-  </div>
-    
-  <div class="col-md-4">
-    <h3>Shedule</h3>
-    <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-    </tbody>
-  </table>
   </div>
 </div>
+
+
+    
+  
+
 

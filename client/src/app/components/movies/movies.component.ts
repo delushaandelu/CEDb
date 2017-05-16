@@ -8,32 +8,23 @@ import {MoviesService} from '../../services/movies.service';
 })
 export class MoviesComponent implements OnInit {
   popularList: Array<Object>;
-  theatersList: Array<Object>;
   topRatedList: Array<Object>;
-  searchRes: Array<Object>;
-  searchStr: string;
+
   constructor(private _moviesService: MoviesService) {
-    this._moviesService.getAll().subscribe(res => {
+    this._moviesService.getPopular().subscribe(res => {
       this.popularList = res;
       console.log(this.popularList);
     });
-    this._moviesService.getInTheaters().subscribe(res => {
-      this.theatersList = res.results;
-    });
-    this._moviesService.getTopRatedMovies().subscribe(res => {
-      this.topRatedList = res.results;
+
+    this._moviesService.getToprated().subscribe(res => {
+      this.topRatedList = res;
+      console.log(this.topRatedList);
     });
 
     
   }
 
   ngOnInit() {
-  }
-
-  searchMovies() {
-    this._moviesService.searchMovies(this.searchStr).subscribe(res => {
-      this.searchRes = res.results;
-    })
   }
 
 }

@@ -32,6 +32,14 @@ const MovieSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    ratelist:[{
+        uID: String,
+        rate: String
+    }],
+    likes:{
+        type: String,
+        required: true
+    },
     catagory:[{
         type: String
     }],
@@ -98,3 +106,33 @@ module.exports.getAll  = function(callback){
 module.exports.addcomment = function(comment,dramaId,callback){
     Movie.findOneAndUpdate({_id: dramaId},{$push: {userComments: comment}},callback);
 }
+
+module.exports.addRating = function(rateList,dramaId,callback){
+    Movie.findOneAndUpdate({_id: dramaId},{$push: {ratelist: rateList}},callback);
+}
+
+module.exports.updateRatingList = function(rate,dramaId,callback){
+    Movie.update({_id: dramaId,'ratelist.uID':rate.uID},{$set:{'ratelist.$.rate': rate.rate}},callback);
+}
+
+module.exports.updateRating = function(rate,dramaId,callback){
+    Movie.update({_id: dramaId},{rating: rate},callback);
+}
+
+module.exports.getToprate = function(callback){
+    Movie.find({rating:{$gte:8}},callback);
+}
+
+module.exports.getPopular = function(callback){
+    Movie.find({},callback).sort({likes:-1}).limit(4);
+}
+
+module.exports.getMovieByChannel = function(channel, callback){
+    Movie.find({tvChannel:channel},callback);
+}
+
+module.exports.getMovieByCatagory = function(catagory, callback){
+    Movie.find({catagory:catagory},callback);
+}
+
+
