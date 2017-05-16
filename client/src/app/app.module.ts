@@ -8,10 +8,6 @@ import { AppComponent } from './app.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
-import { GenresComponent } from './components/genres/genres.component';
-import { UpcomingComponent } from './components/upcoming/upcoming.component';
-import { PopularSeriesComponent } from './components/popular-series/popular-series.component';
-import { SerieComponent } from './components/serie/serie.component';
 import { ActorComponent } from './components/actor/actor.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -32,6 +28,10 @@ import { AddmovieComponent } from './components/admin/addmovie/addmovie.componen
 import { ChannelComponent } from './components/channel/channel.component';
 
 import {PopupModule} from 'ng2-opd-popup';
+import { SearchResultComponent } from './components/search-result/search-result.component';
+
+import { StarRatingModule } from 'angular-star-rating';
+
 
 
 @NgModule({
@@ -40,10 +40,6 @@ import {PopupModule} from 'ng2-opd-popup';
     MoviesComponent,
     MovieComponent,
     MovieCardComponent,
-    GenresComponent,
-    UpcomingComponent,
-    PopularSeriesComponent,
-    SerieComponent,
     ActorComponent,
     LoginComponent,
     RegisterComponent,
@@ -57,7 +53,8 @@ import {PopupModule} from 'ng2-opd-popup';
     DashboardComponent,
     ProfileComponent,
     AddmovieComponent,
-    ChannelComponent
+    ChannelComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +63,8 @@ import {PopupModule} from 'ng2-opd-popup';
     JsonpModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule,
-    PopupModule.forRoot()
+    PopupModule.forRoot(),
+    StarRatingModule
     
   ],
   providers: [ValidateService, AuthService, AuthGuard],

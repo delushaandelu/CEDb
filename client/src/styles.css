@@ -95,3 +95,14 @@
     box-shadow: 0 2.5em 0 0;
   }
 }
+
+.main{
+  /*background-image: url("/assets/img/white.png");
+  background-size: 200px 200px;  
+  background-repeat: repeat;*/
+  background-attachment: fixed;
+
+  background-color: #eff2f7;
+  /*opacity: 0.5;
+    filter: alpha(opacity=50);  For IE8 and earlier */
+}

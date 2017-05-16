@@ -10,15 +10,19 @@ import {Router} from '@angular/router'
   providers: [MoviesService]
 })
 export class AppComponent {
-  genres: Array<Object>;
+  cnames: Array<Object> =[];
 
   constructor(private _moviesServices: MoviesService,
       private authService: AuthService,
       private router: Router,
   ) {
-    this._moviesServices.getGenres().subscribe(res => {
-      this.genres = res.genres.slice(0, 20);
+
+    this._moviesServices.getChannelnames().subscribe(res => {
+      this.cnames = res;
+      console.log(this.cnames);
     });
+
+    
   }
 
   onLogoutClick(){

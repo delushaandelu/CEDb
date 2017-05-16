@@ -16,24 +16,40 @@
         {{genre}}
       </a>
     </p>
-    <p>Sesons {{movie.numberOfSeasons}} | Episodes {{movie.numberOfEpisodes}}</p>
+    <p>Sesons {{movie.numberOfSeasons}} | Episodes {{movie.numberOfEpisodes}} | {{movie.status}} </p>
     <h3>Overview</h3>
-    <p style="height: 150px">
+    <p style="height: 120px">
       {{movie.overview}}
     </p>
-    <button class="btn btn-info">Rate</button>
+    <star-rating-comp   [starType]="'svg'"
+                        [rating]= r
+                        [size]="'medium'"
+                        [hoverEnabled]="true"
+                        [numOfStars]="10"
+                        (onClick)="onClick($event)" 
+                        (onRatingChange)="onRatingChange($event)"
+                        (onHoverRatingChange)="onHoverRatingChange($event)" style="float: left">                             
+    </star-rating-comp>
+    <span style="width: 20px;">Rate: {{onclickrate}}</span>
+
+    <!--{{onHoverRatingChangeResult | json}}-->
+    <!--<p>onClickResult: {{onClickResult | json}}</p>
+    <p>onRatingChangeResult: {{onRatingChangeResult | json}}</p>-->
+
     <button class="btn btn-info">Add to Watch List</button>
-    <button class="btn btn-info">Add Review</button>
   </div>
 
-  <div *ngIf="channel" class="col-md-2" style="float: right">
-    <p>{{movie.tvChannel}}</p>
+  <div *ngIf="channel" class="col-md-2" style="align-content: center">
+    <!--<p>{{movie.tvChannel}}</p>-->
     <img src="assets/img/{{channel.logoUrl}}" alt="" style="width: 70px; height: 70px"> 
-    <p>{{movie.showTime}} | {{movie.status}}</p>
+    <p>Everyday {{movie.showTime}} </p>
     <a routerLink="/channel/{{channel.name}}" >Visit Channel</a>
-    <button (click)="getepisode()" class="btn btn-info">Episodes</button>
-    <button (click)="getactor()" class="btn btn-info">Cast & Crew</button>
-    <button (click)="getreview()" class="btn btn-info">Reviews</button>
+
+    <div style="margin-top: 100px;" id="middle">
+      <button (click)="getepisode()" onClick="document.getElementById('middle').scrollIntoView()" class="btn btn-info navbtn">Episodes<img src="assets/img/down.png" alt="" style="width: 30px; height: 30px;float: right"> </button>
+      <button (click)="getactor()" onClick="document.getElementById('middle').scrollIntoView()" class="btn btn-info navbtn">Cast & Crew <img src="assets/img/down.png" alt="" style="width: 30px; height: 30px;float: right"></button>
+      <button (click)="getreview()" onClick="document.getElementById('middle').scrollIntoView()" class="btn btn-info navbtn">Reviews <img src="assets/img/down.png" alt="" style="width: 30px; height: 30px;float: right"></button>
+    </div>
   </div>
   
 </div>
@@ -52,7 +68,7 @@
     
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-6" >
     <div>
       <h2>Reviews</h2>
       <div *ngFor="let review of com">
@@ -74,8 +90,8 @@
 
 <div *ngIf="epi==true">
     <h3>Episodes</h3>
-    <div *ngFor="let i of s" class="row is-flex">
-    <button (click)="change(i)">Season {{i}}</button>
+    <div *ngFor="let i of s" style="display: inline">
+    <a (click)="change(i)">Season {{i}}</a> |
     </div>
     <app-episode-list [snumber]="season" [episode]="movie.episode"></app-episode-list>
 </div>

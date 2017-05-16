@@ -6,25 +6,36 @@
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner" style="height: 380px;" role="listbox">
-        <div class="item active">
+        <div class="item">
           <img src="assets/img/cover1.jpg" alt="Image">
           <div class="carousel-caption">
-            <h3>Sell $</h3>
-            <p>Money Money.</p>
+            <!--<h3>More Sell $</h3>
+            <p>Lorem ipsum...</p>-->
+          </div>      
+        </div>
+        
+        <div class="item active">
+          <img src="assets/img/cover6.jpg" alt="Image">
+          <div class="carousel-caption">
+            <!--<h3>Sell $</h3>
+            <p>Money Money.</p>-->
           </div>      
         </div>
 
         <div class="item">
           <img src="assets/img/cover3.png" alt="Image">
           <div class="carousel-caption">
-            <h3>More Sell $</h3>
-            <p>Lorem ipsum...</p>
+            <!--<h3>More Sell $</h3>
+            <p>Lorem ipsum...</p>-->
           </div>      
         </div>
+
+        
       </div>
 
       <!-- Left and right controls -->
@@ -57,7 +68,7 @@
 
 <div class="row">
   <div class="col-sm-12">
-    <h3 class="orange-text">Top Rated Movies</h3>
+    <h3 class="orange-text">Popular Dramas</h3>
     <div class="row is-flex">
       <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of popularList; let i = index;">
         <movie-card [movie]="movie"></movie-card>
@@ -69,10 +80,10 @@
 
 <div class="row">
   <div class="col-sm-12">
-<h3 class="orange-text">Popular Dramas</h3>
+<h3 class="orange-text">Top Rated Dramas</h3>
 
 <div class="row is-flex">
-  <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of popularList; let i = index;">
+  <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of topRatedList; let i = index;">
     <movie-card [movie]="movie"></movie-card>
   </div>
 </div>

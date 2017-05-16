@@ -19,15 +19,7 @@ const channelSchema = mongoose.Schema({
     },
     Description: {
         type: String
-    },
-    Shedule:[{
-        name: String,
-        time: String
-    }],
-    dramas: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'movie'
-    }]
+    }
 })
 
 const Channel = module.exports = mongoose.model('Channel',channelSchema);
@@ -38,4 +30,8 @@ module.exports.addChannel = function(newChannel, callback){
 
 module.exports.getChannel = function(cname,callback){
     Channel.findOne({'name': cname},callback);
+}
+
+module.exports.getname = function(callback){
+    Channel.find({},callback).select('name');
 }

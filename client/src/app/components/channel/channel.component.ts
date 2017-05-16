@@ -14,7 +14,7 @@ export class ChannelComponent implements OnInit {
 
   constructor(private moviesService:MoviesService, private router:ActivatedRoute) {
 
-    this.moviesService.getAll().subscribe(res => {this.popularList = res; console.log(res);})
+    
     
   }
 
@@ -24,7 +24,12 @@ export class ChannelComponent implements OnInit {
       this.moviesService.getChannel(params['name']).subscribe(channel =>{
         this.channel = channel;
       })
+
+      this.moviesService.getByChannel(params['name']).subscribe(res => {this.popularList = res; console.log(res);})
+
     }))
+
+    
 
   }
 
