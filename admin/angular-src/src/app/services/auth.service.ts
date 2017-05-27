@@ -6,6 +6,7 @@ import {tokenNotExpired} from 'angular2-jwt';
 @Injectable()
 export class AuthService {
   authToken: any;
+  movie: any;
   user: any;
 
   constructor(private http:Http) { }
@@ -27,7 +28,7 @@ export class AuthService {
   addNewMovie(movie){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3000/users/addmovie', movie,{headers: headers })
+    return this.http.post('http://localhost:3000/movies/addmovie', movie,{headers: headers })
       .map(res => res.json());
   }
 
