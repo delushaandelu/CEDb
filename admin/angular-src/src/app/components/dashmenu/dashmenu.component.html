@@ -13,7 +13,7 @@
   <div class="sidebar-wrapper">
     <ul class="nav">
       <li class="active" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-        <a href="dashboard.html">
+        <a [routerLink] = "['/dashboard']">
           <i class="material-icons">dashboard</i>
           <p *ngIf="user">Welcome : {{user.name}}</p>
         </a>

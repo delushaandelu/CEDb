@@ -1,0 +1,73 @@
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+const config = require('../config/database');
+
+//Drama Schema
+const MovieSchema = mongoose.Schema({
+  movieTitle:{
+    type:String
+  },
+  tvChannel:{
+    type:String
+  },
+  startedYear:{
+    type:String
+  },
+  showTime:{
+    type:String
+  },
+  status:{
+    type:String
+  },
+  imagePath:{
+    type:String
+  },
+  rating:{
+    type:String
+  },
+  likes:{
+    type:String
+  },
+  overview:{
+    type:String
+  },
+  category:{
+    type:String
+  },
+  trailerURL:{
+    type:String
+  },
+  Director:{
+    type:String
+  },
+  numberOfSeasons:{
+    type:String
+  },
+  numberOfEpisodes:{
+    type:String
+  },
+  passCode:{
+    type:String
+  }
+});
+
+const Movie = module.exports = mongoose.model('Movie', MovieSchema);
+
+module.exports.getMovieById = function (id, callback) {
+  Movie.movieByID(id, callback);
+}
+
+module.exports.getMovieBymovieTitle = function (movieTitle, callback) {
+  const movieQuery = {movieTitle: movieTitle}
+  Movie.movieTitle(movieQuery, callback);
+}
+
+module.exports.addMovie = function (newMovie, callback) {
+  bcrypt.genSalt(10, (err, salt) =>{
+    bcrypt.hash(newMovie.passCode, salt, (err, hash) => {
+    if (err) throw err;
+  newMovie.passCode = hash;
+  newMovie.save(callback);
+});
+});
+}
