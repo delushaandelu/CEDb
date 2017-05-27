@@ -1,41 +1,41 @@
-<app-dashboard></app-dashboard>
+<app-dashmenu></app-dashmenu>
 <div id="panel_r">
-  <form class="form-horizontal">
+  <form class="form-horizontal" (submit) = "OnAddMovie()">
     <fieldset>
-      <legend>Add Movie</legend>
+      <legend>Add Drama</legend>
 
       <div class="form-group">
-        <label class="col-lg-2 control-label">Movie Title</label>
+        <label class="col-lg-2 control-label">Drama Title</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control"  placeholder="Movie Name">
+          <input type="text" class="form-control" [(ngModel)]="movieTitle" name="movieTitle"  placeholder="Movie Name">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">TV Channel</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control"  placeholder="Channel Name">
+          <input type="text" class="form-control" [(ngModel)]="tvChannel" name="tvChannel"  placeholder="Channel Name">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">Started year</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control"  placeholder="Year">
+          <input type="text" class="form-control" [(ngModel)]="startedYear" name="startedYear" placeholder="Year">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">Show Time</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control"  placeholder="Time">
+          <input type="text" class="form-control" [(ngModel)]="showTime" name="showTime" placeholder="Time">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">Status</label>
         <div class="col-lg-10">
-          <select class="form-control" >
+          <select class="form-control" [(ngModel)]="status" name="status" >
             <option>Ongoing</option>
             <option>Ended</option>
           </select>
@@ -45,21 +45,36 @@
       <div class="form-group">
         <label class="col-lg-2 control-label">Image Path</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control"  placeholder="Past the online hosted url image">
+          <input type="text" class="form-control" [(ngModel)]="imagePath" name="imagePath" placeholder="Past the online hosted url image">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">Rating</label>
         <div class="col-lg-10">
-          <input type="number" class="form-control"  placeholder="Starts from 0.0">
+          <input type="number" class="form-control" [(ngModel)]="rating" name="rating" placeholder="Starts from 0.0">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-lg-2 control-label">Likes</label>
+        <div class="col-lg-10">
+          <input type="number" class="form-control" value="0" [(ngModel)]="likes" name="likes" placeholder="Starts from 0.0">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-lg-2 control-label">Overview</label>
+        <div class="col-lg-10">
+          <textarea class="form-control" [(ngModel)]="overview" name="overview" rows="3"></textarea>
+          <span class="help-block">Discription - 250 Words</span>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">Category</label>
         <div class="col-lg-10">
-          <select class="form-control" >
+          <select class="form-control" [(ngModel)]="category" name="category">
             <option>Love</option>
             <option>Action</option>
             <option>Horror</option>
@@ -71,17 +86,37 @@
       </div>
 
       <div class="form-group">
-        <label class="col-lg-2 control-label">Overview</label>
+        <label class="col-lg-2 control-label">trailerURL</label>
         <div class="col-lg-10">
-          <textarea class="form-control" rows="3"></textarea>
-          <span class="help-block">Discription - 250 Words</span>
+          <input type="text" class="form-control" [(ngModel)]="trailerURL" name="trailerURL"  placeholder="Youtube URL">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="col-lg-2 control-label">trailerURL</label>
+        <label class="col-lg-2 control-label">Director Name</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control"  placeholder="Youtube URL">
+          <input type="text" class="form-control" [(ngModel)]="Director" name="Director"  placeholder="Youtube URL">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-lg-2 control-label">Number Of Seasons</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" [(ngModel)]="numberOfSeasons" name="numberOfSeasons"  placeholder="Youtube URL">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-lg-2 control-label">Number Of Episodes</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" [(ngModel)]="numberOfEpisodes" name="numberOfEpisodes"  placeholder="Youtube URL">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-lg-2 control-label">Pass Code</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" [(ngModel)]="passCode" name="passCode"  placeholder="Youtube URL">
         </div>
       </div>
 
@@ -89,7 +124,7 @@
       <div class="form-group">
         <div class="col-lg-10 col-lg-offset-2">
           <button type="reset" class="btn btn-default">Cancel</button>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-danger">Submit</button>
         </div>
       </div>
 

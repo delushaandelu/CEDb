@@ -19,6 +19,9 @@ import {AuthGuard} from './guards/auth.guard';
 import { AddmovieComponent } from './components/addmovie/addmovie.component';
 import { EpisodeComponent } from './components/episode/episode.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { ViewdramaComponent } from './components/viewdrama/viewdrama.component';
+import { SummaryComponent } from './components/summary/summary.component';
+import { DashmenuComponent } from './components/dashmenu/dashmenu.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -28,7 +31,10 @@ const appRoutes: Routes = [
   {path:'profile', component: ProfileComponent},
   {path:'addmovie', component: AddmovieComponent},
   {path: 'episode', component: EpisodeComponent},
-  {path: 'comments', component: CommentsComponent}
+  {path: 'comments', component: CommentsComponent},
+  {path: 'viewdrama', component: ViewdramaComponent},
+  {path: 'summary', component: SummaryComponent},
+  {path: 'dashmenu', component: DashmenuComponent}
 ]
 
 @NgModule({
@@ -43,6 +49,9 @@ const appRoutes: Routes = [
     AddmovieComponent,
     EpisodeComponent,
     CommentsComponent,
+    ViewdramaComponent,
+    SummaryComponent,
+    DashmenuComponent,
   ],
   imports: [
     BrowserModule,

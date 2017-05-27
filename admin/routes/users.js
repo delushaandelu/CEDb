@@ -9,6 +9,7 @@ const config = require('../config/database');
 //bring the model to the function
 const User = require('../models/user');
 
+
 //Register
 router.post('/register', (req, res, next) => {
   let newUser = new User({
@@ -75,5 +76,7 @@ router.post('/authenticate', (req, res, next) => {
 router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
   res.json({user: req.user});
 });
+
+
 
 module.exports = router;

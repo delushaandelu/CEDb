@@ -18,4 +18,12 @@ export class ValidateService {
     return re.test(email);
   }
 
+  validateMovie(movie){
+    if(movie.movieTitle == undefined || movie.tvChannel == undefined || movie.startedYear == undefined || movie.showTime == undefined || movie.status == undefined || movie.imagePath == undefined || movie.rating == undefined || movie.likes == undefined || movie.overview == undefined || movie.category == undefined || movie.trailerURL == undefined || movie.Director == undefined || movie.numberOfSeasons == undefined || movie.numberOfEpisodes == undefined || movie.passCode == undefined  ){
+      return false;
+    }else{
+      return true;
+    }
+  }
+
 }

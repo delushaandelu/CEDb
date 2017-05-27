@@ -69,3 +69,51 @@ module.exports.comparePassword = function (candidatePassword, hash, callback) {
     callback(null, isMatch);
   });
 }
+
+//Drama Schema
+const MovieSchema = mongoose.Schema({
+  movieTitle:{
+    type:String
+  },
+  tvChannel:{
+    type:String
+  },
+  startedYear:{
+    type:String
+  },
+  showTime:{
+    type:String
+  },
+  status:{
+    type:String
+  },
+  imagePath:{
+    type:String
+  },
+  rating:{
+    type:String
+  },
+  likes:{
+    type:String
+  },
+  overview:{
+    type:String
+  },
+  trailerURL:{
+    type:String
+  },
+  Director:{
+    type:String
+  },
+  numberOfSeasons:{
+    type:String
+  },
+  numberOfEpisodes:{
+    type:String
+  }
+});
+
+
+
+
+
