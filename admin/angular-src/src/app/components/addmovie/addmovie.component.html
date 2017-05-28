@@ -7,14 +7,14 @@
       <div class="form-group">
         <label class="col-lg-2 control-label">Drama Title</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" [(ngModel)]="movieTitle" name="movieTitle"  placeholder="Movie Name">
+          <input type="text" class="form-control" [(ngModel)]="movieTitle" name="movieTitle"  placeholder="Name of the Drama">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">TV Channel</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" [(ngModel)]="tvChannel" name="tvChannel"  placeholder="Channel Name">
+          <input type="text" class="form-control" [(ngModel)]="tvChannel" name="tvChannel"  placeholder="Your channel Name">
         </div>
       </div>
 
@@ -28,14 +28,14 @@
       <div class="form-group">
         <label class="col-lg-2 control-label">Show Time</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" [(ngModel)]="showTime" name="showTime" placeholder="Time">
+          <input type="text" class="form-control" [(ngModel)]="showTime" name="showTime" placeholder="Time in formate (18:30 PM)">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">Status</label>
         <div class="col-lg-10">
-          <select class="form-control" [(ngModel)]="status" name="status" >
+          <select class="form-control" [(ngModel)]="status" name="Selecte the status" >
             <option>Ongoing</option>
             <option>Ended</option>
           </select>
@@ -45,21 +45,21 @@
       <div class="form-group">
         <label class="col-lg-2 control-label">Image Path</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" [(ngModel)]="imagePath" name="imagePath" placeholder="Past the online hosted url image">
+          <input type="text" class="form-control" [(ngModel)]="imagePath" name="imagePath" placeholder="eg: www.google.com/foldername/image.jpg">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">Rating</label>
         <div class="col-lg-10">
-          <input type="number" class="form-control" [(ngModel)]="rating" name="rating" placeholder="Starts from 0.0">
+          <input type="number" class="form-control" [(ngModel)]="rating" name="rating" placeholder="Starts from 0.0 Default Must be 0">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">Likes</label>
         <div class="col-lg-10">
-          <input type="number" class="form-control" value="0" [(ngModel)]="likes" name="likes" placeholder="Starts from 0.0">
+          <input type="number" class="form-control" value="0" [(ngModel)]="likes" name="likes" placeholder="Starts from 0.0 Default Must be 0">
         </div>
       </div>
 
@@ -74,7 +74,7 @@
       <div class="form-group">
         <label class="col-lg-2 control-label">Category</label>
         <div class="col-lg-10">
-          <select class="form-control" [(ngModel)]="category" name="category">
+          <select class="form-control" [(ngModel)]="category" name="Select a Category">
             <option>Love</option>
             <option>Action</option>
             <option>Horror</option>
@@ -88,35 +88,35 @@
       <div class="form-group">
         <label class="col-lg-2 control-label">trailerURL</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" [(ngModel)]="trailerURL" name="trailerURL"  placeholder="Youtube URL">
+          <input type="text" class="form-control" [(ngModel)]="trailerURL" name="trailerURL"  placeholder="https://www.youtube.com/watch?v=(w9gvjv4NT6c) - This name only needed ">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">Director Name</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" [(ngModel)]="Director" name="Director"  placeholder="Youtube URL">
+          <input type="text" class="form-control" [(ngModel)]="Director" name="Director"  placeholder="Full Name of the Director">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">Number Of Seasons</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" [(ngModel)]="numberOfSeasons" name="numberOfSeasons"  placeholder="Youtube URL">
+          <input type="text" class="form-control" [(ngModel)]="numberOfSeasons" name="numberOfSeasons"  placeholder="Total Seasons of this drama- Estimated">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">Number Of Episodes</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" [(ngModel)]="numberOfEpisodes" name="numberOfEpisodes"  placeholder="Youtube URL">
+          <input type="text" class="form-control" [(ngModel)]="numberOfEpisodes" name="numberOfEpisodes"  placeholder="Total Episodes of this drama- Estimated">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-2 control-label">Pass Code</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" [(ngModel)]="passCode" name="passCode"  placeholder="Youtube URL">
+          <input type="text" class="form-control" [(ngModel)]="passCode" name="passCode"  placeholder="Password Code for this Drama *Security*">
         </div>
       </div>
 

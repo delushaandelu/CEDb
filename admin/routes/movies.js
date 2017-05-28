@@ -9,6 +9,7 @@ const config = require('../config/database');
 //bring the model to the function
 const Movie = require('../models/movie');
 
+//Add new drama
 router.post('/addmovie',(req, res, next)=>{
   const newMovie = Movie({
     movieTitle: req.body.movieTitle,
@@ -38,4 +39,21 @@ router.post('/addmovie',(req, res, next)=>{
 
 });
 
+//display all the dramas
+router.get('/viewdrama',(req, res, next)=>{
+  Movie.find(function (err, movie) {
+    res.json(movie);
+});
+});
+
+//delete a drama
+router.delete('/movieremove/:id',(req, res, next)=>{
+  Movie.remove({_id: req.params.id}, function (err, result) {
+    if(err){
+      res.json(err);
+    }else{
+      res.json(result);
+    }
+});
+});
 module.exports = router;
