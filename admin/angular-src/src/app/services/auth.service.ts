@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
+import {Drama} from './auth';
 import {tokenNotExpired} from 'angular2-jwt';
 
 @Injectable()
@@ -29,6 +30,16 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type','application/json');
     return this.http.post('http://localhost:3000/movies/addmovie', movie,{headers: headers })
+      .map(res => res.json());
+  }
+
+  gerDrama(){
+    return this.http.get('http://localhost:3000/movies/viewdrama')
+      .map(res => res.json());
+  }
+
+  deleteDrama(id){
+    return this.http.delete('http://localhost:3000/movies/movieremove/'+id)
       .map(res => res.json());
   }
 

@@ -1,1 +1,69 @@
 <app-dashmenu></app-dashmenu>
+
+<div *ngFor="let drama of dramas">
+  <div class="content" id="viewDrama">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header" data-background-color="red">
+              <h4 class="title">{{drama.movieTitle}}</h4>
+              <p class="category"> {{drama.tvChannel}}</p>
+            </div>
+            <div class="card-content table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                <th>Status : {{drama.status}}</th>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Started Year</td>
+                  <td>: {{drama.startedYear}}</td>
+                </tr>
+                <tr>
+                  <td>Showing Time</td>
+                  <td>: {{drama.showTime}}</td>
+                </tr>
+                <tr>
+                  <td>Drama Image Path</td>
+                  <td>: {{drama.imagePath}}</td>
+                </tr>
+                <tr>
+                  <td>Current Rating</td>
+                  <td>: {{drama.rating}}</td>
+                </tr>
+                <tr>
+                  <td>Current Subsribtions</td>
+                  <td>: {{drama.likes}}</td>
+                </tr>
+                <tr>
+                  <td>Category</td>
+                  <td>: {{drama.category}}</td>
+                </tr>
+                <tr>
+                  <td>Trailer</td>
+                  <td>: {{drama.trailerURL}}</td>
+                </tr>
+                <tr>
+                  <td>Director Name</td>
+                  <td>: {{drama.Director}}</td>
+                </tr>
+                <tr>
+                  <td>No. of Seasons</td>
+                  <td>: {{drama.numberOfSeasons}}</td>
+                </tr>
+                <tr>
+                  <td>No. of Episodes</td>
+                  <td>:  {{drama.numberOfEpisodes}}</td>
+                </tr>
+                <tr>
+                  <td colspan="2"><input type="button" (click)="deleteDrama" value="Delete" class="btn btn-danger"></td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
