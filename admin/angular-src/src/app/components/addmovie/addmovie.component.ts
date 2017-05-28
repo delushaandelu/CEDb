@@ -63,7 +63,7 @@ export class AddmovieComponent implements OnInit {
     this.authService.addNewMovie(movie).subscribe(data =>{
       if(data.success){
         this.flashMessage.show('New Drama Added Sussfully', {cssClass: 'alert-success', timeout:3000});
-        this.router.navigate(['/addmovie']);
+        this.router.navigate(['/viewdrama']);
       }else{
         this.flashMessage.show('New Drama Added Failed', {cssClass: 'alert-danger', timeout:3000});
         this.router.navigate(['/addmovie']);
