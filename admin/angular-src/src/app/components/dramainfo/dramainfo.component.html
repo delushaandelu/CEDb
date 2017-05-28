@@ -1,4 +1,3 @@
-<app-dashmenu></app-dashmenu>
 
 <div *ngFor="let drama of dramas">
   <div class="content" id="viewDrama">
@@ -55,13 +54,6 @@
                 <tr>
                   <td>No. of Episodes</td>
                   <td>:  {{drama.numberOfEpisodes}}</td>
-                </tr>
-                <tr>
-                  <td colspan="2">
-                    <input type="button" (click)="dramaInfo(drama._id)"  value="View Info" class="btn btn-primary">
-                    <input type="button" [routerLink] = "['/episode']" value="Add an Episode" class="btn btn-success">
-                    <input type="button" (click)="deleteDrama(drama._id)" value="Delete" class="btn btn-danger">
-                  </td>
                 </tr>
                 </tbody>
               </table>

@@ -1,0 +1,50 @@
+#welcome{
+  margin-top: 50%;
+}
+#movie{
+  position: fixed;
+}
+#panel_r{
+  margin-top: 10%;
+  width: 60%;
+  margin-left: 20%;
+}
+#login{
+  margin-top: 10%;
+  margin-right: 30%;
+  margin-left: 32%;
+}
+#user{
+  margin-top: 5%;
+  margin-right: -40%;
+  margin-left: 35%;
+}
+#dash{
+  margin-top: 10%;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+#col2{
+  margin-left: 5%;
+}
+#summary{
+  margin-left: 15%;
+  margin-top: 5%;
+}
+#load{
+  margin-left: 20%;
+}
+#viewDrama{
+  margin-left: 35%;
+  margin-right: 10%;
+}
+#bg{
+  position: fixed;
+  margin-left: -8.3%;
+  margin-bottom: -24%;
+}
+#bghome{
+  position: fixed;
+  margin-left: -7.2%;
+  margin-bottom: -24%;
+}

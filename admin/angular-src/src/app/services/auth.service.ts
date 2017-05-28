@@ -43,6 +43,11 @@ export class AuthService {
       .map(res => res.json());
   }
 
+  dramaInfo(id){
+    return this.http.get('http://localhost:3000/movies/infodrama/'+id)
+      .map(res => res.json());
+  }
+
   getProfile(){
     let headers = new Headers();
     this.loadToken();

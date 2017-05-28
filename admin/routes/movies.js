@@ -46,6 +46,13 @@ router.get('/viewdrama',(req, res, next)=>{
 });
 });
 
+//view all the information of the drama
+router.get('/infodrama/:id', (req , res, next)=>{
+  Movie.find(function (err, movie) {
+    res.json(movie);
+})
+});
+
 //delete a drama
 router.delete('/movieremove/:id',(req, res, next)=>{
   Movie.remove({_id: req.params.id}, function (err, result) {

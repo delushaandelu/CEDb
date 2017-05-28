@@ -22,6 +22,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { ViewdramaComponent } from './components/viewdrama/viewdrama.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { DashmenuComponent } from './components/dashmenu/dashmenu.component';
+import { DramainfoComponent } from './components/dramainfo/dramainfo.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
   {path: 'comments', component: CommentsComponent},
   {path: 'viewdrama', component: ViewdramaComponent},
   {path: 'summary', component: SummaryComponent},
-  {path: 'dashmenu', component: DashmenuComponent}
+  {path: 'dashmenu', component: DashmenuComponent},
+  {path: 'dramainfo', component: DramainfoComponent}
 ]
 
 @NgModule({
@@ -52,6 +54,7 @@ const appRoutes: Routes = [
     ViewdramaComponent,
     SummaryComponent,
     DashmenuComponent,
+    DramainfoComponent,
   ],
   imports: [
     BrowserModule,
