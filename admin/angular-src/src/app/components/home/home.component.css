@@ -1,0 +1,12 @@
+#bghome{
+  position: fixed;
+  margin-left: -7.2%;
+  margin-bottom: -24%;
+}
+
+#welcome{
+  position: absolute;
+  text-align: center;
+  margin-left: 20%;
+  margin-top: 15%;
+}

@@ -1,54 +1,25 @@
-<div class="sidebar" data-color="red" data-image="../assets/img/sidebar-1.jpg" id="movie">
-  <!--
-    Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
-
-    Tip 2: you can also add an image using data-image tag
-   -->
-  <div class="logo">
-    <a href="http://www.creative-tim.com" class="simple-text">
-      CEDb Admin
-    </a>
-  </div>
-
-  <div class="sidebar-wrapper">
-    <ul class="nav">
-      <li class="active" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-        <a [routerLink] = "['/dashboard']">
-          <i class="material-icons">dashboard</i>
-          <p *ngIf="user">Welcome : {{user.name}}</p>
-        </a>
-      </li>
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-        <a  [routerLink] = "['/addmovie']">
-          <i class="material-icons">person</i>
-          <p>Add Drama</p>
-        </a>
-      </li>
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-        <a  [routerLink] = "['/viewdrama']">
-          <i class="material-icons">content_paste</i>
-          <p>View Drama</p>
-        </a>
-      </li>
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-        <a [routerLink] = "['/comments']">
-          <i class="material-icons">bubble_chart</i>
-          <p>View Comments</p>
-        </a>
-      </li>
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-        <a [routerLink] = "['/profile']">
-          <i class="material-icons">person</i>
-          <p>Profile</p>
-        </a>
-      </li>
-      <li class="active-pro">
-        <a (click)="onLogoutClick()" href="#" >
-          <i class="material-icons">unarchive</i>
-          <p>LogOut</p>
-        </a>
-      </li>
-
-    </ul>
+<div class="navbar navbar-default navbar-fixed-top" id="nave">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="../" class="navbar-brand"><p *ngIf="user">Welcome : {{user.name}}</p></a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav navbar-right">
+        <!--<li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink] = "['/dashboard']">Dashboard</a></li>-->
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink] = "['/dashboard']"><i class="material-icons">dashboard</i>Home</a></li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"> <a  [routerLink] = "['/addmovie']"><i class="material-icons">person</i>Add Drama</a></li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a  [routerLink] = "['/viewdrama']"><i class="material-icons">content_paste</i>View Drama</a></li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink] = "['/profile']"><i class="material-icons">person</i>Profile</a></li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"> <a (click)="onLogoutClick()" href="#" ><i class="material-icons">unarchive</i>SignOut</a></li>
+        <!-- <li><a (click)="onLogoutClick()"  href="#">Logout</a></li>-->
+      </ul>
+    </div>
   </div>
 </div>
+
+
