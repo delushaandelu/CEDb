@@ -48,7 +48,7 @@ router.get('/viewdrama',(req, res, next)=>{
 
 //view all the information of the drama
 router.get('/infodrama/:id', (req , res, next)=>{
-  Movie.find({_id: req.params.id},function (err, movie) {
+  Movie.find(function (err, movie) {
     res.json(movie);
 })
 });
