@@ -59,7 +59,9 @@
                 <tr>
                   <td colspan="2">
                     <input type="button" (click)="dramaInfo(drama._id)"  value="View Info" class="btn btn-primary">
-                    <input type="button" [routerLink] = "['/episode']" value="Add an Episode" class="btn btn-success">
+                    <input type="button" [routerLink] = "['/dramainfo']" value="Add Episode" class="btn btn-success">
+                    <input type="button" [routerLink] = "['/episode']" value="Add Casts" class="btn btn-default">
+                    <input type="button" [routerLink] = "['/comments']" value="Comments" class="btn btn-warning">
                     <input type="button" (click)="deleteDrama(drama._id)" value="Delete" class="btn btn-danger">
                   </td>
                 </tr>
