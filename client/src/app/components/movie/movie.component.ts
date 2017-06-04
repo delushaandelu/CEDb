@@ -155,9 +155,9 @@ export class MovieComponent implements OnInit {
             this.flashMessageService.show("Rating updated Successfully",{cssClass:'alert-success', timeout: 3000});
             //console.log(res)
           })
-          this._moviesServices.calculation(this.id).subscribe(res =>{
-            console.log(res);
-          });
+          // this._moviesServices.calculation(this.id).subscribe(res =>{
+          //   console.log(res);
+          // });
         }
     })
     }else{
