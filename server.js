@@ -29,7 +29,7 @@ const channel = require('./routes/channel');
 const actor = require('./routes/actor');
 
 //port number
-const port=3000;
+const port=4100;
 
 
 //Cors Middleware

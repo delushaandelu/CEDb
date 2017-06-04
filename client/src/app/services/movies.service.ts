@@ -14,27 +14,27 @@ export class MoviesService {
   }
 
   getAll(){
-    return this.http.get('http://localhost:3000/movie/getall')
+    return this.http.get('/movie/getall')
       .map(res => res.json());
   }
 
   getPopular(){
-    return this.http.get('http://localhost:3000/movie/getpopular')
+    return this.http.get('/movie/getpopular')
       .map(res => res.json());
   }
 
   getToprated(){
-    return this.http.get('http://localhost:3000/movie/toprated')
+    return this.http.get('/movie/toprated')
       .map(res => res.json());
   }
 
   getByCatagory(cat: string){
-    return this.http.get('http://localhost:3000/movie/catagory/'+cat)
+    return this.http.get('/movie/catagory/'+cat)
       .map(res => res.json());
   }
 
   getByChannel(name: string){
-    return this.http.get('http://localhost:3000/movie/channel/'+name)
+    return this.http.get('/movie/channel/'+name)
       .map(res => res.json());
   }
 
@@ -44,7 +44,7 @@ export class MoviesService {
       let headers = new Headers({ 'Content-Type': 'application/json' }); 
       let options = new RequestOptions({ headers: headers });
 
-      return this.http.post('http://localhost:3000/movie/addcomment/', bodyString, options) 
+      return this.http.post('/movie/addcomment/', bodyString, options) 
         .map((res:Response) => res.json())
         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
@@ -55,7 +55,7 @@ export class MoviesService {
       let headers = new Headers({ 'Content-Type': 'application/json' }); 
       let options = new RequestOptions({ headers: headers });
 
-      return this.http.post('http://localhost:3000/movie/addrating/', bodyString, options) 
+      return this.http.post('/movie/addrating/', bodyString, options) 
         .map((res:Response) => res.json())
         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
@@ -65,7 +65,7 @@ export class MoviesService {
       let headers = new Headers({ 'Content-Type': 'application/json' }); 
       let options = new RequestOptions({ headers: headers });
 
-      return this.http.put('http://localhost:3000/movie/updaterate/', bodyString, options) 
+      return this.http.put('/movie/updaterate/', bodyString, options) 
         .map((res:Response) => res.json())
         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
@@ -75,7 +75,7 @@ export class MoviesService {
     var total = 0;
     var count = 0;
      var rating = 0;
-    this.http.get('http://localhost:3000/movie/getmovie/'+id).subscribe(res => {
+    this.http.get('/movie/getmovie/'+id).subscribe(res => {
       ratelist = res.json().ratelist;
 
       for(let x of res.json().ratelist){
@@ -92,7 +92,7 @@ export class MoviesService {
       let headers = new Headers({ 'Content-Type': 'application/json' }); 
       let options = new RequestOptions({ headers: headers });
 
-      return this.http.put('http://localhost:3000/movie/updaterating/', bodyString, options)
+      return this.http.put('/movie/updaterating/', bodyString, options)
         .map((res:Response) => res.json())
         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     })
@@ -102,24 +102,24 @@ export class MoviesService {
   }
 
   getMovie(id: string){
-    return this.http.get('http://localhost:3000/movie/getmovie/'+id)
+    return this.http.get('/movie/getmovie/'+id)
       .map(res => res.json());
   }
 
   getChannel(name: string){
-    return this.http.get('http://localhost:3000/channel/findchannel/'+name)
+    return this.http.get('/channel/findchannel/'+name)
       .map(res => res.json());
       
   }
 
   getChannelnames(){
-    return this.http.get('http://localhost:3000/channel/getnames')
+    return this.http.get('/channel/getnames')
       .map(res => res.json());
       
   }
 
   getActor(id: string){
-    return this.http.get('http://localhost:3000/actor/getactor/'+id)
+    return this.http.get('/actor/getactor/'+id)
       .map(res => res.json());
   }
 
