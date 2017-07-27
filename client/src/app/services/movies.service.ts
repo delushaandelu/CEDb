@@ -50,7 +50,6 @@ export class MoviesService {
   }
 
   addrateList(ratelist){
-    console.log(ratelist);
       let bodyString = JSON.stringify(ratelist);
       let headers = new Headers({ 'Content-Type': 'application/json' }); 
       let options = new RequestOptions({ headers: headers });
@@ -70,23 +69,20 @@ export class MoviesService {
         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
-  calculation(id){
-    var ratelist: Array<Object>;
+  calculation(movie){
+    console.log("calculation called");
     var total = 0;
     var count = 0;
      var rating = 0;
-    this.http.get('/movie/getmovie/'+id).subscribe(res => {
-      ratelist = res.json().ratelist;
-
-      for(let x of res.json().ratelist){
+      for(let x of movie.ratelist){
           total = total + parseInt(x["rate"]);
           count ++;
       }
-
       rating = total / count;
+      console.log(total+" "+count);
       var d = {
-        dramaID : id,
-        rating : rating
+        dramaID : movie._id,
+        rating : rating.toFixed(1)
       }
       let bodyString = JSON.stringify(d);
       let headers = new Headers({ 'Content-Type': 'application/json' }); 
@@ -95,10 +91,7 @@ export class MoviesService {
       return this.http.put('/movie/updaterating/', bodyString, options)
         .map((res:Response) => res.json())
         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
-    })
-
-    console.log(ratelist);
-      
+       
   }
 
   getMovie(id: string){
@@ -123,5 +116,8 @@ export class MoviesService {
       .map(res => res.json());
   }
 
- 
+  getsearchresult(str : string){
+    return this.http.get('/movie/search/'+str)
+      .map(res => res.json());
+  }
 }

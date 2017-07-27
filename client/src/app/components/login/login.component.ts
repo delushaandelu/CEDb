@@ -33,11 +33,11 @@ export class LoginComponent implements OnInit {
     this.authService.authenticateUser(user).subscribe(data => {
       if(data.success){
         this.authService.storeUserData(data.token, data.user);
-        this.flashMessageService.show("Succesfully logged in",{cssClass:'alert-success', timeout: 3000});
+        this.flashMessageService.show("Succesfully logged into system",{cssClass:'alert-success', timeout: 3000});
         console.log("Succesfully logged in");
         this.router.navigate(['']);
       }else{
-        this.flashMessageService.show(data.msg,{cssClass:'alert-danger', timeout: 3000});
+        this.flashMessageService.show("Incorrect Username or Password",{cssClass:'alert-danger', timeout: 3000});
         console.log("login Fail");
         this.router.navigate(['login']);
       }

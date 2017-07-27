@@ -10,6 +10,9 @@ import {Router} from '@angular/router'
   providers: [MoviesService]
 })
 export class AppComponent {
+
+  search: String;
+
   cnames: Array<Object> =[];
 
   constructor(private _moviesServices: MoviesService,
@@ -19,10 +22,8 @@ export class AppComponent {
 
     this._moviesServices.getChannelnames().subscribe(res => {
       this.cnames = res;
-      console.log(this.cnames);
     });
-
-    
+ 
   }
 
   onLogoutClick(){
@@ -30,4 +31,10 @@ export class AppComponent {
     //this.flashMessageService.show("Logged Out",{cssClass:'alert-success', timeout: 3000});
     console.log("Logout");
   }
+
+  onSearch(){
+    let search = this.search;
+    this.router.navigate(['catagory/'+search]);
+  }
+
 }

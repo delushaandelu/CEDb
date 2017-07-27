@@ -1,10 +1,10 @@
 
-<h3>Cast & Crew</h3>
+<h3 style="color: #00284d">Cast & Crew</h3>
 
 <div class="row is-flex">
     <div class="col-md-2" *ngFor="let c of crew">
       <img src="assets/img/{{c.actor.imagePath}}"style="width: 130px; height: 150px; ">
-      <h4>{{c.actor.name}}</h4>
+      <h4 style="color: #00284d;font-size: 16px">{{c.actor.name}}</h4>
       <p>{{c.role}}</p>
       <a routerLink="/actor/{{c.actor._id}}">View Profile</a>
   </div>
