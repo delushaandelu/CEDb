@@ -5,18 +5,13 @@
 
   <div class="col-md-6">
     <h2>{{channel.name}}
-      <small class="label label-warning">
-        rate
-        <i class="glyphicon glyphicon-star"></i>
-      </small>
     </h2>
-    <p>{{channel.Description}}</p>
+    
     <h3>Overview</h3>
+    <p>{{channel.Description}}</p>
     <div style="height: 60px;">
       
     </div>
-    <img src="assets/img/star1.png" style="height: 40px; width: 180px;"> 
-    <button class="btn btn-info">Rate</button>
   </div>
   <div class="col-md-3">
     <h3>Drama Shedule</h3>
@@ -40,7 +35,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <h3 class="orange-text"> All Dramas</h3>
+    <h3 class="orange-text"  style="color: #00284d"> All Dramas</h3>
     <div class="row is-flex">
       <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of popularList; let i = index;">
         <movie-card [movie]="movie"></movie-card>

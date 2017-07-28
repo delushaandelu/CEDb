@@ -1,8 +1,8 @@
 <div class="row is-flex" style="padding-top: 20px;">
   <div class="col-md-2" *ngFor="let epi of filterepisode">
       <img src="assets/img/{{epi.episodeImagePath}}"style="width: 170px; height: 150px; ">
-      <h4>{{epi.episodeTitle}}</h4>
-      <p>{{epi.episodeOverview}}</p>
+      <h4 style="color: #00284d">{{epi.episodeTitle}}</h4>
+      <!--<p>{{epi.episodeOverview}}</p>-->
       <button class="btn btn-default" (click)= "ClickButton(epi.episodeURL)">Watch Now</button>
   </div>
 </div>

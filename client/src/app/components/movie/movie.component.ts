@@ -36,6 +36,8 @@ export class MovieComponent implements OnInit {
   season: string = "1";
   channel: Object;
   s: Array<Number> = [];
+  rating: String;
+  count: number = 0;
   constructor(
     private _moviesServices: MoviesService,
     private authService: AuthService,
@@ -59,7 +61,7 @@ export class MovieComponent implements OnInit {
         this.epi = false;
         this.actor = false;
         this.review = true;
-
+        this.rating = movie.rating;
         //get current logged in user rating
         if(this.authService.loggedIn()){
           this.authService.getProfile().subscribe(res => {
@@ -72,6 +74,11 @@ export class MovieComponent implements OnInit {
                 }
               }
           });
+        }
+
+        //count users
+        for(let x of movie.ratelist){
+          this.count = this.count+1;
         }
 
         //get channel 
@@ -153,10 +160,10 @@ export class MovieComponent implements OnInit {
             this.onclickrate = $event.rating;
             this._moviesServices.updaterateList(ratelist).subscribe(res => {
             this.flashMessageService.show("Rating updated Successfully",{cssClass:'alert-success', timeout: 3000});
-            //console.log(res)
           })
-          this._moviesServices.calculation(this.id).subscribe(res =>{
+          this._moviesServices.calculation(this.movie).subscribe(res =>{
             console.log(res);
+            this.rating = res.value;
           });
         }
     })

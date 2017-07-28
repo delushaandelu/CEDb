@@ -11,8 +11,8 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-top: 35px;">
         <ul class="nav navbar-nav">
-            <li routerLinkActive="active"><a routerLink="#">Upcoming Dramas</a></li>
-            <li routerLinkActive="active"><a routerLink="#">Popular Dramas</a></li>
+            <li routerLinkActive="active"><a routerLink="catagory/top">Top Rated Dramas</a></li>
+            <li routerLinkActive="active"><a routerLink="catagory/popular">Popular Dramas</a></li>
             <li class="dropdown" *ngIf="cnames">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">TV Channels <b class="caret"></b></a>
                 <ul class="dropdown-menu" >
@@ -22,16 +22,16 @@
 			<li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Catagories <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a routerLink="catagory/Action">Action</a></li>
-                    <li><a routerLink="catagory/Romance">Romance</a></li>
-                    <li><a routerLink="catagory/History">History</a></li>                  
+                    <li><a routerLink="catagory/cat_Action">Action</a></li>
+                    <li><a routerLink="catagory/cat_Romance">Romance</a></li>
+                    <li><a routerLink="catagory/cat_History">History</a></li>                  
                 </ul>
             </li>
         </ul>
         <div class="col-sm-3 col-md-3">
-            <form class="navbar-form" role="search">
+            <form (ngSubmit)="onSearch()" class="navbar-form" role="search">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="q">
+                    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search" name="search">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>

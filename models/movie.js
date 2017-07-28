@@ -108,6 +108,7 @@ module.exports.addcomment = function(comment,dramaId,callback){
 }
 
 module.exports.addRating = function(rateList,dramaId,callback){
+    console.log(rateList.rate+dramaId);
     Movie.findOneAndUpdate({_id: dramaId},{$push: {ratelist: rateList}},callback);
 }
 
@@ -116,6 +117,7 @@ module.exports.updateRatingList = function(rate,dramaId,callback){
 }
 
 module.exports.updateRating = function(rate,dramaId,callback){
+    console.log(rate);
     Movie.update({_id: dramaId},{rating: rate},callback);
 }
 
@@ -133,6 +135,13 @@ module.exports.getMovieByChannel = function(channel, callback){
 
 module.exports.getMovieByCatagory = function(catagory, callback){
     Movie.find({catagory:catagory},callback);
+}
+
+module.exports.search = function(catagory, callback){
+    console.log(catagory);
+    var searchPhrase = catagory;
+    var regularExpression = new RegExp(".*" + searchPhrase + ".*");
+    Movie.find({movieTitle: regularExpression},callback);
 }
 
 

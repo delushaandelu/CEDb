@@ -46,7 +46,6 @@ router.post('/addcomment',(req,res, next) => {
 
 //add to RateList
 router.post('/addrating',(req,res, next) => {
-    console.log(req.body.ratelist);
     Movie.addRating(req.body.ratelist,req.body.dramaID,(err) => {
         if(err){
             res.json({success: false, msg: 'Faild to add rating'+err});      
@@ -70,12 +69,13 @@ router.put('/updaterate',(req,res, next) => {
 
 //update Rating
 router.put('/updaterating',(req,res, next) => {
-    console.log("adf"); 
     Movie.updateRating(req.body.rating,req.body.dramaID,(err) => {
         if(err){
             res.json({success: false, msg: 'Faild to update rating'+err});     
+            console.log("rate update fail");
         }else{
-            res.json({success: true, msg: 'rating updated'});
+            res.json({success: true, msg: 'rating updated',value:req.body.rating});
+            console.log("rate updated");
         }
     });
 });
@@ -134,4 +134,14 @@ router.get('/toprated', (req, res, next) => {
     });
 });
 
+//get serach results
+router.get('/search/:str', (req,res,next) => {
+    Movie.search(req.params.str,(err,movies) =>{
+        if(err){
+            console.log(err)
+            // res.send(err);
+        }
+            res.json(movies);
+    })
+})
 module.exports = router;

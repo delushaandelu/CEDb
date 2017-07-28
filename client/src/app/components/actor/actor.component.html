@@ -19,8 +19,8 @@
 
 <div class="row" *ngIf = "actor">
   <div class="col-md-8">
-    <h3 class="orange-text">Filomography</h3>
-    <table class="table table-striped">
+    <h3 class="orange-text" style="color: #00284d">Filomography</h3>
+    <table class="table table-striped" style="color: #00284d">
     <thead>
       <tr>
         <th>Drama</th>
@@ -30,7 +30,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let r of actor.Filmograpghy">
-        <td>{{r.Drama}}</td>
+        <td>Drama</td>
         <td>{{r.Role}}</td>
         <td>{{r.Year}}</td>
       </tr>
@@ -39,8 +39,8 @@
   </div>
     
   <div class="col-md-4" *ngIf = "actor">
-    <h3>Awards</h3>
-    <table class="table table-striped">
+    <h3 style="color: #00284d">Awards</h3>
+    <table class="table table-striped" style="color: #00284d">
     <thead>
       <tr>
         <th>Award</th>
@@ -59,8 +59,8 @@
   </div>
 </div>
 
-<div class="row">
+<!--<div class="row">
   <div class="col-md-12">
       <h3>Photo Gallery</h3>
   </div>
-</div>
+</div>-->

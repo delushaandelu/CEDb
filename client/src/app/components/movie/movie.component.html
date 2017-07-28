@@ -6,8 +6,11 @@
   <div class="col-md-6">
     <h2>{{movie.movieTitle}}
       <small class="label label-warning">
-        {{movie.rating}}
+        {{rating}}
         <i class="glyphicon glyphicon-star"></i>
+      </small>
+      <small style="font-size: 12px;color: lavenderblush">
+      {{count}} users
       </small>
     </h2>
     <p>{{movie.startedYear}}</p>
@@ -35,8 +38,6 @@
     <!--{{onHoverRatingChangeResult | json}}-->
     <!--<p>onClickResult: {{onClickResult | json}}</p>
     <p>onRatingChangeResult: {{onRatingChangeResult | json}}</p>-->
-
-    <button class="btn btn-info">Add to Watch List</button>
   </div>
 
   <div *ngIf="channel" class="col-md-2" style="align-content: center">
@@ -58,7 +59,7 @@
   <div class="col-md-6">
     <!--Trailer-->
     <div>
-        <h2>Trailer</h2>
+        <h2 style="color: #001a33">Trailer</h2>
         <div class="embed-responsive embed-responsive-16by9">
           <iframe class="embed-responsive-item" [src]="url"></iframe>
         </div>
@@ -70,11 +71,11 @@
 
   <div class="col-md-6" >
     <div>
-      <h2>Reviews</h2>
+      <h2 style="color: #001a33">Reviews</h2>
       <div *ngFor="let review of com">
         <blockquote>
-          <p class="text-justify">{{review.text}}</p>
-          <footer><cite title="{{review.author}}"><a href="{{review.url}}" target="_blank">{{review.postedBy}}</a><br>{{review.date}}</cite></footer>
+          <p class="text-justify" style="color: #001a33;font-size: 14px">{{review.text}}</p>
+          <footer><cite><a>{{review.postedBy}}</a><br>{{review.date.substring(0,10)}}</cite></footer>
         </blockquote>
       </div>
       <flash-messages></flash-messages>
@@ -89,7 +90,7 @@
 </div>
 
 <div *ngIf="epi==true">
-    <h3>Episodes</h3>
+    <h3 style="color: #001a33">Episodes</h3>
     <div *ngFor="let i of s" style="display: inline">
     <a (click)="change(i)">Season {{i}}</a> |
     </div>
